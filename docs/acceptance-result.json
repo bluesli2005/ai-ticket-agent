@@ -1,0 +1,302 @@
+{
+  "checks": [
+    {
+      "check": "HTTP page and static assets",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "Local models installed and service online",
+      "passed": true,
+      "details": {
+        "online": true,
+        "models": [
+          "qwen2.5:3b",
+          "qwen3-embedding:0.6b",
+          "glm-4.7-flash:latest",
+          "gemma4:latest",
+          "gemma:latest",
+          "deepseek-r1:8b"
+        ],
+        "chat_ready": true,
+        "embed_ready": true
+      }
+    },
+    {
+      "check": "Seed is idempotent",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "Real semantic document indexing",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "Persisted 1024-dimensional embeddings",
+      "passed": true,
+      "details": [
+        1024,
+        1024,
+        1024,
+        1024
+      ]
+    },
+    {
+      "check": "Real RAG answer and citations for ticket 1",
+      "passed": true,
+      "details": {
+        "elapsed_seconds": 2.54,
+        "result": {
+          "summary": "VPN 连接失败，提示认证超时",
+          "category": "系统故障",
+          "category_reason": "现有样本分类器的建议，需人工确认；不是校准概率",
+          "priority": "普通",
+          "priority_reason": "未识别到广泛影响描述，请补充影响范围",
+          "missing_info": [],
+          "steps": [
+            {
+              "text": "当 VPN 提示认证超时，但普通网页可以访问时，先确认设备日期和时间为自动同步。检查客户端是否有待确认的登录或多重验证请求。完成验证后重新连接一次。",
+              "source_ids": [
+                1
+              ],
+              "evidence_quote": "当 VPN 提示认证超时，但普通网页可以访问时，先确认设备日期和时间为自动同步。检查客户端是否有待确认的登录或多重验证请求。完成验证后重新连接一次。"
+            },
+            {
+              "text": "如果仍然超时，记录失败时间、客户端版本和完整错误提示，交由 IT 人员核查认证服务与账号状态。不要反复尝试密码，也不要关闭设备安全软件来绕过问题。",
+              "source_ids": [
+                1
+              ],
+              "evidence_quote": "如果仍然超时，记录失败时间、客户端版本和完整错误提示，交由 IT 人员核查认证服务与账号状态。不要反复尝试密码，也不要关闭设备安全软件来绕过问题。"
+            }
+          ],
+          "reply": "您好，关于“VPN 连接失败，提示认证超时”，以下是相关资料中的处理指引，请先核对适用条件：\n\n1. 当 VPN 提示认证超时，但普通网页可以访问时，先确认设备日期和时间为自动同步。检查客户端是否有待确认的登录或多重验证请求。完成验证后重新连接一次。 [1]\n\n2. 如果仍然超时，记录失败时间、客户端版本和完整错误提示，交由 IT 人员核查认证服务与账号状态。不要反复尝试密码，也不要关闭设备安全软件来绕过问题。 [1]\n\n以上是待核对的排查建议，不代表已确认原因。如仍未解决，请补充完整错误提示和影响范围。\n\n参考资料：[1]",
+          "sources": [
+            {
+              "chunk_id": 1,
+              "doc_id": 1,
+              "revision": 1,
+              "ordinal": 1,
+              "page": null,
+              "text": "# VPN 连接排查\n本资料为演示用 IT 手册，不代表任何公司的正式操作政策。\n\n## 认证超时\n当 VPN 提示认证超时，但普通网页可以访问时，先确认设备日期和时间为自动同步。检查客户端是否有待确认的登录或多重验证请求。完成验证后重新连接一次。\n\n如果仍然超时，记录失败时间、客户端版本和完整错误提示，交由 IT 人员核查认证服务与账号状态。不要反复尝试密码，也不要关闭设备安全软件来绕过问题。\n\n## 网络与影响范围\n确认是在家庭网络还是办公网络、其他同事是否同样受影响。无法访问普通网页时先排查本机网络。公网可用并不等于企业 VPN 服务正常，不能仅凭现象确定根因。",
+              "title": "VPN 连接排查（示例）",
+              "embed_model": "qwen3-embedding:0.6b",
+              "source_ticket": null,
+              "score": 0.7064,
+              "semantic": 0.8366,
+              "lexical": 0.5111,
+              "source_id": 1,
+              "current": true
+            }
+          ],
+          "mode": "generated",
+          "retrieval_mode": "hybrid",
+          "warning": "",
+          "answerable": true,
+          "needs_review": true,
+          "model": "qwen2.5:3b",
+          "grounding": "verified_source_excerpts",
+          "similar_tickets": []
+        }
+      }
+    },
+    {
+      "check": "Verbatim evidence and no invented ticket summary 1",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "Real RAG answer and citations for ticket 2",
+      "passed": true,
+      "details": {
+        "elapsed_seconds": 1.52,
+        "result": {
+          "summary": "更换手机后无法完成双重验证",
+          "category": "账号登录",
+          "category_reason": "现有样本分类器的建议，需人工确认；不是校准概率",
+          "priority": "普通",
+          "priority_reason": "未识别到广泛影响描述，请补充影响范围",
+          "missing_info": [],
+          "steps": [
+            {
+              "text": "没有恢复码时，由 IT 人员通过组织认可的渠道核验身份，再执行多重验证重置。用户描述和工单提交本身不构成身份验证，不得直接绕过验证或关闭多重验证。",
+              "source_ids": [
+                1
+              ],
+              "evidence_quote": "没有恢复码时，由 IT 人员通过组织认可的渠道核验身份，再执行多重验证重置。用户描述和工单提交本身不构成身份验证，不得直接绕过验证或关闭多重验证。"
+            },
+            {
+              "text": "记录账号标识（不含密码）、是否仍可使用旧设备、错误提示和最近一次成功登录的时间。身份确认前仅提供排查指导。",
+              "source_ids": [
+                1
+              ],
+              "evidence_quote": "记录账号标识（不含密码）、是否仍可使用旧设备、错误提示和最近一次成功登录的时间。身份确认前仅提供排查指导。"
+            }
+          ],
+          "reply": "您好，关于“更换手机后无法完成双重验证”，以下是相关资料中的处理指引，请先核对适用条件：\n\n1. 没有恢复码时，由 IT 人员通过组织认可的渠道核验身份，再执行多重验证重置。用户描述和工单提交本身不构成身份验证，不得直接绕过验证或关闭多重验证。 [1]\n\n2. 记录账号标识（不含密码）、是否仍可使用旧设备、错误提示和最近一次成功登录的时间。身份确认前仅提供排查指导。 [1]\n\n以上是待核对的排查建议，不代表已确认原因。如仍未解决，请补充完整错误提示和影响范围。\n\n参考资料：[1]",
+          "sources": [
+            {
+              "chunk_id": 3,
+              "doc_id": 3,
+              "revision": 1,
+              "ordinal": 1,
+              "page": null,
+              "text": "# 账号与双重验证\n本资料为演示手册，实际恢复流程应以所在组织要求为准。\n\n## 更换手机后无法验证\n更换手机且旧验证器不可用时，先确认是否保存过恢复码。有恢复码时，在系统提供的恢复入口按提示使用。不要把恢复码、密码或验证码发给客服。\n\n没有恢复码时，由 IT 人员通过组织认可的渠道核验身份，再执行多重验证重置。用户描述和工单提交本身不构成身份验证，不得直接绕过验证或关闭多重验证。\n\n## 需要补充的信息\n记录账号标识（不含密码）、是否仍可使用旧设备、错误提示和最近一次成功登录的时间。身份确认前仅提供排查指导。",
+              "title": "账号与双重验证（示例）",
+              "embed_model": "qwen3-embedding:0.6b",
+              "source_ticket": null,
+              "score": 0.6583,
+              "semantic": 0.8138,
+              "lexical": 0.425,
+              "source_id": 1,
+              "current": true
+            }
+          ],
+          "mode": "generated",
+          "retrieval_mode": "hybrid",
+          "warning": "",
+          "answerable": true,
+          "needs_review": true,
+          "model": "qwen2.5:3b",
+          "grounding": "verified_source_excerpts",
+          "similar_tickets": []
+        }
+      }
+    },
+    {
+      "check": "Verbatim evidence and no invented ticket summary 2",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "Real RAG answer and citations for ticket 3",
+      "passed": true,
+      "details": {
+        "elapsed_seconds": 1.52,
+        "result": {
+          "summary": "浏览器打开工作台后白屏",
+          "category": "系统故障",
+          "category_reason": "现有样本分类器的建议，需人工确认；不是校准概率",
+          "priority": "普通",
+          "priority_reason": "未识别到广泛影响描述，请补充影响范围",
+          "missing_info": [],
+          "steps": [
+            {
+              "text": "先记录浏览器版本和出现时间。使用无痕窗口打开相同页面，比较是否能正常加载。若无痕窗口正常，可逐一停用浏览器扩展，定位冲突后再次验证。",
+              "source_ids": [
+                1
+              ],
+              "evidence_quote": "先记录浏览器版本和出现时间。使用无痕窗口打开相同页面，比较是否能正常加载。若无痕窗口正常，可逐一停用浏览器扩展，定位冲突后再次验证。"
+            },
+            {
+              "text": "如多台设备或多个用户同时白屏，应由 IT 检查服务状态。不要直接建议清除所有浏览器数据；清除网站数据可能导致退出登录或丢失本地未保存内容，应先说明影响并取得用户同意。",
+              "source_ids": [
+                1
+              ],
+              "evidence_quote": "如多台设备或多个用户同时白屏，应由 IT 检查服务状态。不要直接建议清除所有浏览器数据；清除网站数据可能导致退出登录或丢失本地未保存内容，应先说明影响并取得用户同意。"
+            }
+          ],
+          "reply": "您好，关于“浏览器打开工作台后白屏”，以下是相关资料中的处理指引，请先核对适用条件：\n\n1. 先记录浏览器版本和出现时间。使用无痕窗口打开相同页面，比较是否能正常加载。若无痕窗口正常，可逐一停用浏览器扩展，定位冲突后再次验证。 [1]\n\n2. 如多台设备或多个用户同时白屏，应由 IT 检查服务状态。不要直接建议清除所有浏览器数据；清除网站数据可能导致退出登录或丢失本地未保存内容，应先说明影响并取得用户同意。 [1]\n\n以上是待核对的排查建议，不代表已确认原因。如仍未解决，请补充完整错误提示和影响范围。\n\n参考资料：[1]",
+          "sources": [
+            {
+              "chunk_id": 2,
+              "doc_id": 2,
+              "revision": 1,
+              "ordinal": 1,
+              "page": null,
+              "text": "# 浏览器白屏排查\n本资料为演示用排查指南。\n\n## 仅单个浏览器异常\n先记录浏览器版本和出现时间。使用无痕窗口打开相同页面，比较是否能正常加载。若无痕窗口正常，可逐一停用浏览器扩展，定位冲突后再次验证。\n\n如多台设备或多个用户同时白屏，应由 IT 检查服务状态。不要直接建议清除所有浏览器数据；清除网站数据可能导致退出登录或丢失本地未保存内容，应先说明影响并取得用户同意。\n\n## 提交给 IT 的信息\n提供错误截图、浏览器版本、影响范围和复现步骤。涉及账号或客户资料的截图需先遮盖敏感内容。",
+              "title": "浏览器白屏排查（示例）",
+              "embed_model": "qwen3-embedding:0.6b",
+              "source_ticket": null,
+              "score": 0.4983,
+              "semantic": 0.6148,
+              "lexical": 0.3235,
+              "source_id": 1,
+              "current": true
+            }
+          ],
+          "mode": "generated",
+          "retrieval_mode": "hybrid",
+          "warning": "",
+          "answerable": true,
+          "needs_review": true,
+          "model": "qwen2.5:3b",
+          "grounding": "verified_source_excerpts",
+          "similar_tickets": []
+        }
+      }
+    },
+    {
+      "check": "Verbatim evidence and no invented ticket summary 3",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "Human reply and feedback saved atomically",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "Solution waits for review",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "Unapproved solution excluded from retrieval",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "Approved solution can be retrieved",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "Out-of-scope question withheld",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "Unrelated instruction has no supported answer",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "Cross-origin writes rejected",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "Missing/incorrect session token rejected",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "Document update invalidates historical citations",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "Deleted document absent from retrieval",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "Backup recovery preserves tickets and knowledge",
+      "passed": true,
+      "details": null
+    }
+  ],
+  "passed": true,
+  "rag_elapsed_seconds": [
+    2.54,
+    1.52,
+    1.52
+  ],
+  "models": {
+    "endpoint": "http://127.0.0.1:11434",
+    "chat_model": "qwen2.5:3b",
+    "embed_model": "qwen3-embedding:0.6b"
+  },
+  "scope": "real local Ollama and HTTP; browser visual QA not performed"
+}
