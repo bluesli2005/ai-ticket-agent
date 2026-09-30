@@ -1,20 +1,381 @@
 <!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI Lab · 工单分类器</title>
-<style>
-:root{font-family:system-ui,-apple-system,sans-serif;color:#14253c;background:#edf2f7;font-size:16px}*{box-sizing:border-box}body{margin:0}header{background:#11243b;color:#fff;padding:24px max(24px,calc((100vw - 1120px)/2));display:flex;justify-content:space-between;align-items:center}header strong{font-size:20px}header span{color:#a9c7e8;font-size:14px}main{max-width:1168px;margin:32px auto;padding:0 24px}h1{font-size:30px;margin:0 0 10px}p{line-height:1.7;color:#526279}h2{font-size:19px;margin-top:0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}.card{background:white;border:1px solid #d9e2ee;border-radius:16px;padding:26px;margin-top:22px}.eyebrow{color:#167c74;font-size:14px;font-weight:700;letter-spacing:1px}label{display:block;margin:18px 0 10px}textarea{width:100%;min-height:155px;resize:vertical;border:1px solid #b5c3d4;border-radius:10px;padding:14px;font:inherit;line-height:1.6}button{font:inherit;cursor:pointer;border:0;border-radius:9px;background:#176bca;color:white;padding:12px 18px}button:disabled{opacity:.55;cursor:wait}.secondary{background:#e8eff9;color:#25507d;font-size:14px;padding:8px 12px}.samples{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 20px}.result{font-size:28px;font-weight:750;margin:14px 0}.muted{font-size:14px;color:#5a6b7e;line-height:1.6}.bar{height:9px;background:#e9eef5;border-radius:9px;overflow:hidden;margin:7px 0 16px}.fill{height:100%;background:#168e86}.row{display:flex;justify-content:space-between;gap:12px}.tag{display:inline-block;background:#e7f4f1;color:#15675e;padding:5px 9px;border-radius:5px;margin:4px;font-size:14px}.stats{display:flex;gap:30px;flex-wrap:wrap;margin:20px 0}.stats strong{font-size:28px;display:block}.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;font-size:14px}td,th{padding:12px 8px;text-align:left;border-bottom:1px solid #e7edf3}summary{cursor:pointer;color:#176bca;margin-top:18px}.error{color:#b32828;white-space:pre-wrap}footer{margin:22px 0;color:#60748a;font-size:14px}button:focus-visible,textarea:focus-visible{outline:3px solid #65acfa;outline-offset:3px}@media(max-width:760px){.grid{grid-template-columns:1fr}header{padding:20px}header span{display:none}main{padding:0 16px}.card{padding:20px}h1{font-size:25px}}
-</style></head><body>
-<header><strong>AI Lab / 01</strong><span>本地运行 · 无 API Key · Python 标准库</span></header>
-<main><div class="eyebrow">你的第一个机器学习应用</div><h1>让模型给工单分类</h1><p>输入一条中文工单，观察模型如何从训练样本中学习，并比较四种类别的相对得分。</p>
-<div class="grid"><section class="card"><h2>01 / 输入工单</h2><form id="form"><label for="text">工单内容</label><textarea id="text" maxlength="2000" required>我的账号被锁定了，无法登录，怎么找回密码？</textarea><div class="samples"><button type="button" class="secondary" data-sample="这个订单被重复扣款了，请帮我退款">支付问题</button><button type="button" class="secondary" data-sample="页面白屏，刷新后还是打不开">系统报错</button><button type="button" class="secondary" data-sample="希望增加批量导入功能">功能建议</button><button type="button" class="secondary" data-sample="明天去海边看日出">无关内容</button></div><button id="predict">识别类别</button></form><p class="muted">字符切分 → 特征计数 → 朴素贝叶斯 → 类别得分。没有调用大语言模型，也没有向外部发送文本。</p></section>
-<section class="card" aria-live="polite"><h2>02 / 预测结果</h2><div id="result"><p>点击“识别类别”查看模型结果。</p></div></section></div>
-<section class="card"><div class="row"><h2>03 / 模型体检</h2><button class="secondary" id="train">重新训练并评估</button></div><p class="muted">使用独立的教学测试样本；这些小样本成绩不代表真实业务准确率。修改 dataset.json 后，可以点击重新训练。</p><div id="report" aria-live="polite">正在读取测试结果…</div></section><footer>学习顺序：dataset.json → model.py → app.py → index.html。模型得分未经校准，不等于真实正确率。</footer></main>
-<script>
-const $=id=>document.getElementById(id);
-function node(tag,text,cls){const el=document.createElement(tag);if(text!==undefined)el.textContent=text;if(cls)el.className=cls;return el}
-async function api(path,data){const response=await fetch(path,data===undefined?{}:{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});const value=await response.json();if(!response.ok)throw Error(value.error||'请求失败');return value}
-document.querySelectorAll('[data-sample]').forEach(b=>b.onclick=()=>{$('text').value=b.dataset.sample;$('text').focus()});
-$('form').onsubmit=async event=>{event.preventDefault();$('predict').disabled=true;$('result').replaceChildren(node('p','正在预测…'));try{const r=await api('/api/predict',{text:$('text').value});const root=$('result');root.replaceChildren(node('div',r.label,'result'));if(r.uncertain)root.append(node('p','已知特征不足或类别区分不明显，请人工判断。','muted'));for(const item of r.ranking){const row=node('div',undefined,'row');row.append(node('span',item.label),node('span',(item.score*100).toFixed(1)+'%'));const bar=node('div',undefined,'bar');const fill=node('div',undefined,'fill');fill.style.width=(item.score*100)+'%';bar.append(fill);root.append(row,bar)}root.append(node('p','已知特征覆盖率：'+(r.coverage*100).toFixed(0)+'%。以下片段更支持第一候选类别（相对第二候选）：','muted'));for(const f of r.features)root.append(node('span',f.token,'tag'));root.append(node('p','分数是模型内部相对得分，可能过度自信；拒识也可能失败。','muted'))}catch(e){$('result').replaceChildren(node('p',e.message,'error'))}finally{$('predict').disabled=false}};
-function renderReport(r){const root=$('report');root.replaceChildren();const stats=node('div',undefined,'stats');for(const [name,value] of [['训练样本',r.train_count],['测试样本',r.test_count],['准确率',(r.accuracy*100).toFixed(1)+'%'],['Macro F1',r.macro_f1.toFixed(3)]]){const item=node('div');item.append(node('strong',value),node('span',name,'muted'));stats.append(item)}root.append(stats);const details=node('details');details.append(node('summary','查看全部测试样本与错误'));const wrap=node('div',undefined,'table-wrap'),table=node('table'),head=node('tr');for(const h of ['工单','实际类别','预测类别','结果'])head.append(node('th',h));table.append(head);for(const d of r.details){const row=node('tr');for(const v of [d.text,d.label,d.prediction,d.correct?'正确':'错误 / 拒识'])row.append(node('td',v));table.append(row)}wrap.append(table);details.append(wrap);root.append(details)}
-$('train').onclick=async()=>{$('train').disabled=true;try{renderReport(await api('/api/train',{}))}catch(e){$('report').replaceChildren(node('p',e.message,'error'))}finally{$('train').disabled=false}};
-api('/api/report').then(renderReport).catch(e=>$('report').replaceChildren(node('p',e.message,'error')));
-</script></body></html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>AI Lab · 工单分类器</title>
+    <style>
+      :root {
+        font-family:
+          system-ui,
+          -apple-system,
+          sans-serif;
+        color: #14253c;
+        background: #edf2f7;
+        font-size: 16px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+      }
+      header {
+        background: #11243b;
+        color: #fff;
+        padding: 24px max(24px, calc((100vw - 1120px) / 2));
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      header strong {
+        font-size: 20px;
+      }
+      header span {
+        color: #a9c7e8;
+        font-size: 14px;
+      }
+      main {
+        max-width: 1168px;
+        margin: 32px auto;
+        padding: 0 24px;
+      }
+      h1 {
+        font-size: 30px;
+        margin: 0 0 10px;
+      }
+      p {
+        line-height: 1.7;
+        color: #526279;
+      }
+      h2 {
+        font-size: 19px;
+        margin-top: 0;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 22px;
+      }
+      .card {
+        background: white;
+        border: 1px solid #d9e2ee;
+        border-radius: 16px;
+        padding: 26px;
+        margin-top: 22px;
+      }
+      .eyebrow {
+        color: #167c74;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 1px;
+      }
+      label {
+        display: block;
+        margin: 18px 0 10px;
+      }
+      textarea {
+        width: 100%;
+        min-height: 155px;
+        resize: vertical;
+        border: 1px solid #b5c3d4;
+        border-radius: 10px;
+        padding: 14px;
+        font: inherit;
+        line-height: 1.6;
+      }
+      button {
+        font: inherit;
+        cursor: pointer;
+        border: 0;
+        border-radius: 9px;
+        background: #176bca;
+        color: white;
+        padding: 12px 18px;
+      }
+      button:disabled {
+        opacity: 0.55;
+        cursor: wait;
+      }
+      .secondary {
+        background: #e8eff9;
+        color: #25507d;
+        font-size: 14px;
+        padding: 8px 12px;
+      }
+      .samples {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin: 12px 0 20px;
+      }
+      .result {
+        font-size: 28px;
+        font-weight: 750;
+        margin: 14px 0;
+      }
+      .muted {
+        font-size: 14px;
+        color: #5a6b7e;
+        line-height: 1.6;
+      }
+      .bar {
+        height: 9px;
+        background: #e9eef5;
+        border-radius: 9px;
+        overflow: hidden;
+        margin: 7px 0 16px;
+      }
+      .fill {
+        height: 100%;
+        background: #168e86;
+      }
+      .row {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+      }
+      .tag {
+        display: inline-block;
+        background: #e7f4f1;
+        color: #15675e;
+        padding: 5px 9px;
+        border-radius: 5px;
+        margin: 4px;
+        font-size: 14px;
+      }
+      .stats {
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+        margin: 20px 0;
+      }
+      .stats strong {
+        font-size: 28px;
+        display: block;
+      }
+      .table-wrap {
+        overflow: auto;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 14px;
+      }
+      td,
+      th {
+        padding: 12px 8px;
+        text-align: left;
+        border-bottom: 1px solid #e7edf3;
+      }
+      summary {
+        cursor: pointer;
+        color: #176bca;
+        margin-top: 18px;
+      }
+      .error {
+        color: #b32828;
+        white-space: pre-wrap;
+      }
+      footer {
+        margin: 22px 0;
+        color: #60748a;
+        font-size: 14px;
+      }
+      button:focus-visible,
+      textarea:focus-visible {
+        outline: 3px solid #65acfa;
+        outline-offset: 3px;
+      }
+      @media (max-width: 760px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+        header {
+          padding: 20px;
+        }
+        header span {
+          display: none;
+        }
+        main {
+          padding: 0 16px;
+        }
+        .card {
+          padding: 20px;
+        }
+        h1 {
+          font-size: 25px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header><strong>AI Lab / 01</strong><span>本地运行 · 无 API Key · Python 标准库</span></header>
+    <main>
+      <div class="eyebrow">你的第一个机器学习应用</div>
+      <h1>让模型给工单分类</h1>
+      <p>输入一条中文工单，观察模型如何从训练样本中学习，并比较六种类别的相对得分。</p>
+      <div class="grid">
+        <section class="card">
+          <h2>01 / 输入工单</h2>
+          <form id="form">
+            <label for="text">工单内容</label
+            ><textarea id="text" maxlength="2000" required>
+我的账号被锁定了，无法登录，怎么找回密码？</textarea
+            >
+            <div class="samples">
+              <button type="button" class="secondary" data-sample="忘记密码了怎么重置密码">
+                账号与认证</button
+              ><button type="button" class="secondary" data-sample="申请开通财务报表的查看权限">
+                权限与访问</button
+              ><button type="button" class="secondary" data-sample="订单重复扣款申请退款">
+                支付与账单</button
+              ><button type="button" class="secondary" data-sample="VPN 连接后无法访问内网地址">
+                网络与连接</button
+              ><button type="button" class="secondary" data-sample="打开页面出现白屏">
+                应用与数据故障</button
+              ><button type="button" class="secondary" data-sample="希望增加批量导入功能">
+                功能与改进需求</button
+              ><button type="button" class="secondary" data-sample="🌊🌞">无关内容</button>
+            </div>
+            <button id="predict">识别类别</button>
+          </form>
+          <p class="muted">
+            字符切分 → 特征计数 → 朴素贝叶斯 → 类别得分。没有调用大语言模型，也没有向外部发送文本。
+          </p>
+        </section>
+        <section class="card" aria-live="polite">
+          <h2>02 / 预测结果</h2>
+          <div id="result"><p>点击“识别类别”查看模型结果。</p></div>
+        </section>
+      </div>
+      <section class="card">
+        <div class="row">
+          <h2>03 / 模型体检</h2>
+          <button class="secondary" id="train">重新训练并评估</button>
+        </div>
+        <p class="muted">
+          使用独立的教学测试样本；这些小样本成绩不代表真实业务准确率。修改 dataset.json
+          后，可以点击重新训练。
+        </p>
+        <div id="report" aria-live="polite">正在读取测试结果…</div>
+      </section>
+      <footer>
+        学习顺序：dataset.json → model.py → app.py →
+        index.html。模型得分未经校准，不等于真实正确率。
+      </footer>
+    </main>
+    <script>
+      const $ = (id) => document.getElementById(id);
+      function node(tag, text, cls) {
+        const el = document.createElement(tag);
+        if (text !== undefined) el.textContent = text;
+        if (cls) el.className = cls;
+        return el;
+      }
+      async function api(path, data) {
+        const response = await fetch(
+          path,
+          data === undefined
+            ? {}
+            : {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data),
+              },
+        );
+        const value = await response.json();
+        if (!response.ok) throw Error(value.error || '请求失败');
+        return value;
+      }
+      document.querySelectorAll('[data-sample]').forEach(
+        (b) =>
+          (b.onclick = () => {
+            $('text').value = b.dataset.sample;
+            $('text').focus();
+          }),
+      );
+      $('form').onsubmit = async (event) => {
+        event.preventDefault();
+        $('predict').disabled = true;
+        $('result').replaceChildren(node('p', '正在预测…'));
+        try {
+          const r = await api('/api/predict', { text: $('text').value });
+          const root = $('result');
+          root.replaceChildren(node('div', r.label, 'result'));
+          if (r.uncertain)
+            root.append(node('p', '已知特征不足或类别区分不明显，请人工判断。', 'muted'));
+          for (const item of r.ranking) {
+            const row = node('div', undefined, 'row');
+            row.append(node('span', item.label), node('span', (item.score * 100).toFixed(1) + '%'));
+            const bar = node('div', undefined, 'bar');
+            const fill = node('div', undefined, 'fill');
+            fill.style.width = item.score * 100 + '%';
+            bar.append(fill);
+            root.append(row, bar);
+          }
+          root.append(
+            node(
+              'p',
+              '已知特征覆盖率：' +
+                (r.coverage * 100).toFixed(0) +
+                '%。以下片段更支持第一候选类别（相对第二候选）：',
+              'muted',
+            ),
+          );
+          for (const f of r.features) root.append(node('span', f.token, 'tag'));
+          root.append(node('p', '分数是模型内部相对得分，可能过度自信；拒识也可能失败。', 'muted'));
+        } catch (e) {
+          $('result').replaceChildren(node('p', e.message, 'error'));
+        } finally {
+          $('predict').disabled = false;
+        }
+      };
+      function renderReport(r) {
+        const root = $('report');
+        root.replaceChildren();
+        const stats = node('div', undefined, 'stats');
+        for (const [name, value] of [
+          ['训练样本', r.train_count],
+          ['测试样本', r.test_count],
+          ['准确率', (r.accuracy * 100).toFixed(1) + '%'],
+          ['Macro F1', r.macro_f1.toFixed(3)],
+        ]) {
+          const item = node('div');
+          item.append(node('strong', value), node('span', name, 'muted'));
+          stats.append(item);
+        }
+        root.append(stats);
+        const details = node('details');
+        details.append(node('summary', '查看全部测试样本与错误'));
+        const wrap = node('div', undefined, 'table-wrap'),
+          table = node('table'),
+          head = node('tr');
+        for (const h of ['工单', '实际类别', '预测类别', '结果']) head.append(node('th', h));
+        table.append(head);
+        for (const d of r.details) {
+          const row = node('tr');
+          for (const v of [d.text, d.label, d.prediction, d.correct ? '正确' : '错误 / 拒识'])
+            row.append(node('td', v));
+          table.append(row);
+        }
+        wrap.append(table);
+        details.append(wrap);
+        root.append(details);
+      }
+      $('train').onclick = async () => {
+        $('train').disabled = true;
+        try {
+          renderReport(await api('/api/train', {}));
+        } catch (e) {
+          $('report').replaceChildren(node('p', e.message, 'error'));
+        } finally {
+          $('train').disabled = false;
+        }
+      };
+      api('/api/report')
+        .then(renderReport)
+        .catch((e) => $('report').replaceChildren(node('p', e.message, 'error')));
+    </script>
+  </body>
+</html>

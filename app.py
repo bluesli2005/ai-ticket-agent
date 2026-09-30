@@ -80,6 +80,13 @@ class Handler(BaseHTTPRequestHandler):
                 if path=='/api/stats': return self.send(200,ws.stats())
                 if path=='/api/jobs': return self.send(200,ws.active_jobs())
                 if path=='/api/models': return self.send(200,ws.model_status())
+                if path == '/api/tickets/export':
+                    content = ws.export_tickets(
+                        q.get('q', [''])[0], q.get('status', [''])[0], q.get('category', [''])[0]
+                    )
+                    return self.send(200, content, 'text/csv; charset=utf-8', {
+                        'Content-Disposition': 'attachment; filename="desk-tickets.csv"'
+                    })
                 if path=='/api/tickets': return self.send(200,ws.tickets(q.get('q',[''])[0],q.get('status',[''])[0],q.get('category',[''])[0]))
                 if re.fullmatch(r'/api/tickets/\d+',path): return self.send(200,ws.ticket(int(path.split('/')[-1])))
                 if path=='/api/documents': return self.send(200,ws.documents())

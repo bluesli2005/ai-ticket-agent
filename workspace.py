@@ -1,5 +1,6 @@
 """Persistent single-user helpdesk, document ingestion, local RAG and backup."""
 import base64
+import csv
 import hashlib
 import io
 import json
@@ -17,7 +18,8 @@ from pathlib import Path
 
 from ai import Ollama, AIUnavailable, rank, tokens, validate_endpoint
 
-CATEGORIES=['账号登录','支付账单','系统故障','功能需求','其他']
+CATEGORIES=['账号与认证','权限与访问','支付与账单','网络与连接','应用与数据故障','功能与改进需求','待人工分类']
+LEGACY_CATEGORIES={'账号登录':'待人工分类','支付账单':'支付与账单','系统故障':'待人工分类','功能需求':'功能与改进需求','其他':'待人工分类'}
 STATUSES=['待处理','处理中','已解决','已关闭']
 PRIORITIES=['低','普通','高','紧急']
 DEFAULTS={'endpoint':'http://127.0.0.1:11434','chat_model':'qwen2.5:3b',
@@ -82,6 +84,21 @@ class Workspace:
             con.execute("UPDATE jobs SET status='failed',error='上次任务因服务关闭而中断，请重试' WHERE status IN ('queued','running')")
             con.execute("UPDATE documents SET status='failed',error='导入中断，请重新索引' WHERE status IN ('queued','parsing','indexing')")
 
+        self.migrate_categories()
+
+    def migrate_categories(self):
+        # Back up before changing historical labels. Splits require human review.
+        with self.lock,self.connect() as con:
+            rows=con.execute('SELECT id,category FROM tickets').fetchall()
+            rows=[r for r in rows if r['category'] in LEGACY_CATEGORIES]
+            if not rows: return
+            self.backup()
+            for row in rows:
+                category=LEGACY_CATEGORIES[row['category']]
+                con.execute('UPDATE tickets SET category=?,version=version+1,updated_at=? WHERE id=?',
+                            (category,now(),row['id']))
+                self.event(con,row['id'],'分类迁移',f"原类别：{row['category']} → {category}；分类体系升级，历史分析需重新生成")
+
     @contextmanager
     def connect(self):
         con=sqlite3.connect(self.db,timeout=15)
@@ -124,7 +141,7 @@ class Workspace:
     def event(self, con, tid, kind, body):
         con.execute('INSERT INTO events(ticket_id,kind,body,created_at) VALUES (?,?,?,?)',(tid,kind,body,now()))
 
-    def tickets(self, search='',status='',category=''):
+    def tickets(self, search='',status='',category='', *, limit=500):
         query='SELECT * FROM tickets WHERE 1=1';args=[]
         if search:
             query+=' AND (title LIKE ? OR description LIKE ? OR CAST(id AS TEXT)=?)'
@@ -132,7 +149,33 @@ class Workspace:
         if status: query+=' AND status=?';args.append(status)
         if category: query+=' AND category=?';args.append(category)
         with self.connect() as con:
-            return [dict(r) for r in con.execute(query+' ORDER BY updated_at DESC,id DESC LIMIT 500',args)]
+            query += ' ORDER BY updated_at DESC,id DESC'
+            if limit is not None:
+                query += ' LIMIT ?'
+                args.append(limit)
+            return [dict(r) for r in con.execute(query, args)]
+
+    def export_tickets(self, search='', status='', category=''):
+        """Export the complete applied filter, independent of the UI's 500-row cap."""
+        columns = [
+            ('id', '工单编号'), ('title', '标题'), ('description', '问题描述'),
+            ('category', '类别'), ('priority', '优先级'), ('status', '状态'),
+            ('requester', '提交人'), ('reply', '回复'), ('resolution', '解决方案'),
+            ('created_at', '创建时间（UTC）'), ('updated_at', '更新时间（UTC）'),
+        ]
+        output = io.StringIO(newline='')
+        writer = csv.writer(output, quoting=csv.QUOTE_ALL)
+        writer.writerow([label for _, label in columns])
+        for ticket in self.tickets(search, status, category, limit=None):
+            values = []
+            for key, _ in columns:
+                value = str(ticket[key] if ticket[key] is not None else '')
+                # Quote formula-like cells as text, including leading whitespace.
+                if value.lstrip().startswith(('=', '+', '-', '@')) or value.startswith(('\t', '\r', '\n')):
+                    value = "'" + value
+                values.append(value)
+            writer.writerow(values)
+        return output.getvalue().encode('utf-8-sig')
 
     def ticket(self,tid):
         with self.connect() as con:
@@ -157,7 +200,8 @@ class Workspace:
         title=required(data.get('title'),'标题',160)
         body=required(data.get('description'),'问题描述',12000)
         category=data.get('category') or self.classifier.predict(title+' '+body)['label']
-        if category not in CATEGORIES: category='其他'
+        category=LEGACY_CATEGORIES.get(category,category)
+        if category not in CATEGORIES: category='待人工分类'
         priority=data.get('priority','普通')
         if priority not in PRIORITIES: raise ValueError('优先级无效')
         requester=data.get('requester','')
@@ -178,6 +222,7 @@ class Workspace:
                 if key in data: value[key]=data[key]
             value['title']=required(value['title'],'标题',160)
             value['description']=required(value['description'],'问题描述',12000)
+            value['category']=LEGACY_CATEGORIES.get(value['category'],value['category'])
             if value['category'] not in CATEGORIES or value['priority'] not in PRIORITIES or value['status'] not in STATUSES:
                 raise ValueError('类别、状态或优先级无效')
             for key in ['requester','resolution','reply']:
@@ -403,7 +448,7 @@ class Workspace:
         predicted=self.classifier.predict(query)
         urgent=any(word in query for word in ['全员','全部无法','数据丢失','泄露','生产中断'])
         retrieved=self.search(query[:4000]);sources=retrieved['sources']
-        result={'summary':ticket['title'],'category':predicted['label'] if predicted['label'] in CATEGORIES else '其他',
+        result={'summary':ticket['title'],'category':predicted['label'] if predicted['label'] in CATEGORIES else '待人工分类',
                 'category_reason':'现有样本分类器的建议，需人工确认；不是校准概率',
                 'priority':'高' if urgent else '普通',
                 'priority_reason':'描述涉及广泛影响或数据风险，请人工核实' if urgent else '未识别到广泛影响描述，请补充影响范围',
