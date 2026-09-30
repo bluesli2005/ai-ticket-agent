@@ -214,7 +214,7 @@
     <main>
       <div class="eyebrow">你的第一个机器学习应用</div>
       <h1>让模型给工单分类</h1>
-      <p>输入一条中文工单，观察模型如何从训练样本中学习，并比较四种类别的相对得分。</p>
+      <p>输入一条中文工单，观察模型如何从训练样本中学习，并比较六种类别的相对得分。</p>
       <div class="grid">
         <section class="card">
           <h2>01 / 输入工单</h2>
@@ -224,19 +224,19 @@
 我的账号被锁定了，无法登录，怎么找回密码？</textarea
             >
             <div class="samples">
-              <button
-                type="button"
-                class="secondary"
-                data-sample="这个订单被重复扣款了，请帮我退款"
-              >
-                支付问题</button
-              ><button type="button" class="secondary" data-sample="页面白屏，刷新后还是打不开">
-                系统报错</button
+              <button type="button" class="secondary" data-sample="忘记密码了怎么重置密码">
+                账号与认证</button
+              ><button type="button" class="secondary" data-sample="申请开通财务报表的查看权限">
+                权限与访问</button
+              ><button type="button" class="secondary" data-sample="订单重复扣款申请退款">
+                支付与账单</button
+              ><button type="button" class="secondary" data-sample="VPN 连接后无法访问内网地址">
+                网络与连接</button
+              ><button type="button" class="secondary" data-sample="打开页面出现白屏">
+                应用与数据故障</button
               ><button type="button" class="secondary" data-sample="希望增加批量导入功能">
-                功能建议</button
-              ><button type="button" class="secondary" data-sample="明天去海边看日出">
-                无关内容
-              </button>
+                功能与改进需求</button
+              ><button type="button" class="secondary" data-sample="🌊🌞">无关内容</button>
             </div>
             <button id="predict">识别类别</button>
           </form>

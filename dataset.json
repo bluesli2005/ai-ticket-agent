@@ -1,322 +1,2182 @@
 [
   {
     "text": "忘记密码了怎么重置密码",
-    "label": "账号登录",
+    "label": "账号与认证",
     "split": "train"
   },
   {
     "text": "登录时提示账号不存在",
-    "label": "账号登录",
+    "label": "账号与认证",
     "split": "train"
   },
   {
     "text": "收不到登录验证码短信",
-    "label": "账号登录",
+    "label": "账号与认证",
     "split": "train"
   },
   {
     "text": "账号被锁定无法登录",
-    "label": "账号登录",
+    "label": "账号与认证",
     "split": "train"
   },
   {
     "text": "修改密码后登录失败",
-    "label": "账号登录",
+    "label": "账号与认证",
     "split": "train"
   },
   {
     "text": "登录页面一直提示密码错误",
-    "label": "账号登录",
+    "label": "账号与认证",
     "split": "train"
   },
   {
     "text": "需要更换账号绑定的手机号",
-    "label": "账号登录",
+    "label": "账号与认证",
     "split": "train"
   },
   {
     "text": "无法通过邮箱找回密码",
-    "label": "账号登录",
+    "label": "账号与认证",
     "split": "train"
   },
   {
     "text": "登录状态总是过期需要重新验证",
-    "label": "账号登录",
+    "label": "账号与认证",
     "split": "train"
   },
   {
     "text": "账号无法登录请帮忙解锁",
-    "label": "账号登录",
+    "label": "账号与认证",
     "split": "train"
   },
   {
     "text": "如何修改登录邮箱",
-    "label": "账号登录",
+    "label": "账号与认证",
     "split": "train"
   },
   {
     "text": "手机验证码失效了",
-    "label": "账号登录",
+    "label": "账号与认证",
     "split": "train"
   },
   {
     "text": "支付失败但是银行卡已经扣款",
-    "label": "支付账单",
+    "label": "支付与账单",
     "split": "train"
   },
   {
     "text": "请帮我开具本月的发票",
-    "label": "支付账单",
+    "label": "支付与账单",
     "split": "train"
   },
   {
     "text": "订单重复扣款申请退款",
-    "label": "支付账单",
+    "label": "支付与账单",
     "split": "train"
   },
   {
     "text": "如何修改发票抬头",
-    "label": "支付账单",
+    "label": "支付与账单",
     "split": "train"
   },
   {
     "text": "订阅费用账单金额不对",
-    "label": "支付账单",
+    "label": "支付与账单",
     "split": "train"
   },
   {
     "text": "信用卡付款被拒绝",
-    "label": "支付账单",
+    "label": "支付与账单",
     "split": "train"
   },
   {
     "text": "取消订阅后仍然扣费",
-    "label": "支付账单",
+    "label": "支付与账单",
     "split": "train"
   },
   {
     "text": "订单退款多久能到账",
-    "label": "支付账单",
+    "label": "支付与账单",
     "split": "train"
   },
   {
     "text": "需要下载付款账单",
-    "label": "支付账单",
+    "label": "支付与账单",
     "split": "train"
   },
   {
     "text": "支付订单无法完成",
-    "label": "支付账单",
+    "label": "支付与账单",
     "split": "train"
   },
   {
     "text": "请退还多收的费用",
-    "label": "支付账单",
+    "label": "支付与账单",
     "split": "train"
   },
   {
     "text": "发票税号填写错误",
-    "label": "支付账单",
+    "label": "支付与账单",
     "split": "train"
   },
   {
     "text": "打开页面出现白屏",
-    "label": "系统故障",
+    "label": "应用与数据故障",
     "split": "train"
   },
   {
     "text": "服务器报错返回500",
-    "label": "系统故障",
+    "label": "应用与数据故障",
     "split": "train"
   },
   {
     "text": "页面加载很慢一直转圈",
-    "label": "系统故障",
+    "label": "应用与数据故障",
     "split": "train"
   },
   {
     "text": "上传文件时报错失败",
-    "label": "系统故障",
+    "label": "应用与数据故障",
     "split": "train"
   },
   {
     "text": "系统崩溃导致页面无法打开",
-    "label": "系统故障",
+    "label": "应用与数据故障",
     "split": "train"
   },
   {
     "text": "点击保存按钮没有反应",
-    "label": "系统故障",
+    "label": "应用与数据故障",
     "split": "train"
   },
   {
     "text": "接口超时无法返回数据",
-    "label": "系统故障",
+    "label": "应用与数据故障",
     "split": "train"
   },
   {
     "text": "导出报表时系统异常",
-    "label": "系统故障",
+    "label": "应用与数据故障",
     "split": "train"
   },
   {
     "text": "页面突然卡死无法操作",
-    "label": "系统故障",
+    "label": "应用与数据故障",
     "split": "train"
   },
   {
     "text": "上传图片后出现错误提示",
-    "label": "系统故障",
+    "label": "应用与数据故障",
     "split": "train"
   },
   {
     "text": "系统响应缓慢经常超时",
-    "label": "系统故障",
+    "label": "应用与数据故障",
     "split": "train"
   },
   {
     "text": "页面显示的数据出现乱码",
-    "label": "系统故障",
+    "label": "应用与数据故障",
     "split": "train"
   },
   {
     "text": "希望增加批量导入功能",
-    "label": "功能需求",
+    "label": "功能与改进需求",
     "split": "train"
   },
   {
     "text": "建议支持夜间模式",
-    "label": "功能需求",
+    "label": "功能与改进需求",
     "split": "train"
   },
   {
     "text": "能否增加日语界面",
-    "label": "功能需求",
+    "label": "功能与改进需求",
     "split": "train"
   },
   {
     "text": "希望新增导出Excel的功能",
-    "label": "功能需求",
+    "label": "功能与改进需求",
     "split": "train"
   },
   {
     "text": "建议提供自定义报表功能",
-    "label": "功能需求",
+    "label": "功能与改进需求",
     "split": "train"
   },
   {
     "text": "能不能支持批量修改记录",
-    "label": "功能需求",
+    "label": "功能与改进需求",
     "split": "train"
   },
   {
     "text": "希望增加消息提醒功能",
-    "label": "功能需求",
+    "label": "功能与改进需求",
     "split": "train"
   },
   {
     "text": "建议增加按日期筛选的功能",
-    "label": "功能需求",
+    "label": "功能与改进需求",
     "split": "train"
   },
   {
     "text": "能否支持自定义页面主题",
-    "label": "功能需求",
+    "label": "功能与改进需求",
     "split": "train"
   },
   {
     "text": "希望新增团队协作功能",
-    "label": "功能需求",
+    "label": "功能与改进需求",
     "split": "train"
   },
   {
     "text": "建议支持快捷键操作",
-    "label": "功能需求",
+    "label": "功能与改进需求",
     "split": "train"
   },
   {
     "text": "希望增加日历视图",
-    "label": "功能需求",
+    "label": "功能与改进需求",
     "split": "train"
   },
   {
     "text": "密码忘了，在哪里重置？",
-    "label": "账号登录",
+    "label": "账号与认证",
     "split": "test"
   },
   {
     "text": "账号锁定之后一直登录不了",
-    "label": "账号登录",
+    "label": "账号与认证",
     "split": "test"
   },
   {
     "text": "登录验证码一直收不到",
-    "label": "账号登录",
+    "label": "账号与认证",
     "split": "test"
   },
   {
     "text": "更换手机后怎么修改绑定的手机号",
-    "label": "账号登录",
+    "label": "账号与认证",
     "split": "test"
   },
   {
     "text": "这个订单被重复扣款了，请退款",
-    "label": "支付账单",
+    "label": "支付与账单",
     "split": "test"
   },
   {
     "text": "本月发票抬头写错了",
-    "label": "支付账单",
+    "label": "支付与账单",
     "split": "test"
   },
   {
     "text": "取消订阅为什么还会扣费",
-    "label": "支付账单",
+    "label": "支付与账单",
     "split": "test"
   },
   {
     "text": "银行卡付款失败了",
-    "label": "支付账单",
+    "label": "支付与账单",
     "split": "test"
   },
   {
     "text": "页面白屏，刷新也没有用",
-    "label": "系统故障",
+    "label": "应用与数据故障",
     "split": "test"
   },
   {
     "text": "保存文件的时候系统报错",
-    "label": "系统故障",
+    "label": "应用与数据故障",
     "split": "test"
   },
   {
     "text": "今天接口频繁超时",
-    "label": "系统故障",
+    "label": "应用与数据故障",
     "split": "test"
   },
   {
     "text": "导出报表导致系统崩溃",
-    "label": "系统故障",
+    "label": "应用与数据故障",
     "split": "test"
   },
   {
     "text": "希望增加批量导出功能",
-    "label": "功能需求",
+    "label": "功能与改进需求",
     "split": "test"
   },
   {
     "text": "建议增加韩语界面",
-    "label": "功能需求",
+    "label": "功能与改进需求",
     "split": "test"
   },
   {
     "text": "能不能支持自定义快捷键",
-    "label": "功能需求",
+    "label": "功能与改进需求",
     "split": "test"
   },
   {
     "text": "希望新增按标签筛选的功能",
-    "label": "功能需求",
+    "label": "功能与改进需求",
     "split": "test"
+  },
+  {
+    "text": "换了手机，验证器里的登录动态码不能用了",
+    "label": "账号与认证",
+    "split": "train"
+  },
+  {
+    "text": "单点登录提示身份验证失败，进不了工作台",
+    "label": "账号与认证",
+    "split": "train"
+  },
+  {
+    "text": "员工离职后需要停用他的登录账号",
+    "label": "账号与认证",
+    "split": "train"
+  },
+  {
+    "text": "新员工已收到邀请，但无法激活账号",
+    "label": "账号与认证",
+    "split": "train"
+  },
+  {
+    "text": "密码重置邮件中的链接已经过期",
+    "label": "账号与认证",
+    "split": "train"
+  },
+  {
+    "text": "浏览器记住了旧密码，现在总是登不上去",
+    "label": "账号与认证",
+    "split": "train"
+  },
+  {
+    "text": "账号被别人登录了，想退出其他设备",
+    "label": "账号与认证",
+    "split": "train"
+  },
+  {
+    "text": "邮箱地址填错了，无法完成注册验证",
+    "label": "账号与认证",
+    "split": "train"
+  },
+  {
+    "text": "登录时要求双重验证，但备用恢复码找不到了",
+    "label": "账号与认证",
+    "split": "train"
+  },
+  {
+    "text": "企业微信扫码登录一直提示账号未绑定",
+    "label": "账号与认证",
+    "split": "train"
+  },
+  {
+    "text": "同一个账号在手机上登录成功，电脑提示密码不正确",
+    "label": "账号与认证",
+    "split": "train"
+  },
+  {
+    "text": "想修改账号的安全验证方式",
+    "label": "账号与认证",
+    "split": "train"
+  },
+  {
+    "text": "验证码输入正确却提示已过期",
+    "label": "账号与认证",
+    "split": "train"
+  },
+  {
+    "text": "连续输错密码后账户被冻结",
+    "label": "账号与认证",
+    "split": "train"
+  },
+  {
+    "text": "收不到注册激活邮件，垃圾邮件里也没有",
+    "label": "账号与认证",
+    "split": "train"
+  },
+  {
+    "text": "管理员能否重置我的登录凭证",
+    "label": "账号与认证",
+    "split": "train"
+  },
+  {
+    "text": "登录成功后马上又要求重新登录",
+    "label": "账号与认证",
+    "split": "train"
+  },
+  {
+    "text": "注销个人账户需要在哪里申请",
+    "label": "账号与认证",
+    "split": "train"
+  },
+  {
+    "text": "账号邮箱已经停用，希望更换联系方式",
+    "label": "账号与认证",
+    "split": "train"
+  },
+  {
+    "text": "员工调岗后需要重新开通账号访问权限",
+    "label": "权限与访问",
+    "split": "train"
+  },
+  {
+    "text": "SSO 登录显示用户未被分配到此应用",
+    "label": "权限与访问",
+    "split": "train"
+  },
+  {
+    "text": "认证器丢失，需要申请恢复账号",
+    "label": "账号与认证",
+    "split": "train"
+  },
+  {
+    "text": "已有账号但是忘记了用户名",
+    "label": "账号与认证",
+    "split": "train"
+  },
+  {
+    "text": "邀请链接打开后提示身份不匹配",
+    "label": "账号与认证",
+    "split": "train"
+  },
+  {
+    "text": "升级套餐后本月账单多收了一笔钱",
+    "label": "支付与账单",
+    "split": "train"
+  },
+  {
+    "text": "需要补开上季度的电子发票",
+    "label": "支付与账单",
+    "split": "train"
+  },
+  {
+    "text": "公司已银行转账，订单仍显示未付款",
+    "label": "支付与账单",
+    "split": "train"
+  },
+  {
+    "text": "自动续费的扣款日期是什么时候",
+    "label": "支付与账单",
+    "split": "train"
+  },
+  {
+    "text": "申请把发票抬头从个人改为公司",
+    "label": "支付与账单",
+    "split": "train"
+  },
+  {
+    "text": "退款审核通过一周了，银行卡还没收到钱",
+    "label": "支付与账单",
+    "split": "train"
+  },
+  {
+    "text": "优惠券没有抵扣，付款金额比报价高",
+    "label": "支付与账单",
+    "split": "train"
+  },
+  {
+    "text": "想核对订阅账单中的税费明细",
+    "label": "支付与账单",
+    "split": "train"
+  },
+  {
+    "text": "试用结束后被扣费，申请取消并退款",
+    "label": "支付与账单",
+    "split": "train"
+  },
+  {
+    "text": "信用卡到期，需要更换付款方式",
+    "label": "支付与账单",
+    "split": "train"
+  },
+  {
+    "text": "同一张发票开了两次，请作废其中一张",
+    "label": "支付与账单",
+    "split": "train"
+  },
+  {
+    "text": "支付成功的订单没有到账凭证",
+    "label": "支付与账单",
+    "split": "train"
+  },
+  {
+    "text": "购买的服务没用上，可以退费吗",
+    "label": "支付与账单",
+    "split": "train"
+  },
+  {
+    "text": "套餐降级后的差价如何退还",
+    "label": "支付与账单",
+    "split": "train"
+  },
+  {
+    "text": "账单的计费人数比实际使用人数多",
+    "label": "支付与账单",
+    "split": "train"
+  },
+  {
+    "text": "续费时是否可以使用对公转账",
+    "label": "支付与账单",
+    "split": "train"
+  },
+  {
+    "text": "发票上的公司税号需要更正",
+    "label": "支付与账单",
+    "split": "train"
+  },
+  {
+    "text": "本月账单需要拆分到两个成本中心",
+    "label": "支付与账单",
+    "split": "train"
+  },
+  {
+    "text": "重复购买了一份订阅，想退掉一份",
+    "label": "支付与账单",
+    "split": "train"
+  },
+  {
+    "text": "付款时提示余额不足，如何补缴费用",
+    "label": "支付与账单",
+    "split": "train"
+  },
+  {
+    "text": "财务需要去年所有已付款订单的收据",
+    "label": "支付与账单",
+    "split": "train"
+  },
+  {
+    "text": "订单取消了，但预授权金额还没解冻",
+    "label": "支付与账单",
+    "split": "train"
+  },
+  {
+    "text": "扣款币种与合同约定不一致",
+    "label": "支付与账单",
+    "split": "train"
+  },
+  {
+    "text": "能否提供这笔交易的付款流水号",
+    "label": "支付与账单",
+    "split": "train"
+  },
+  {
+    "text": "VPN 连接认证超时，整个团队都连不上",
+    "label": "网络与连接",
+    "split": "train"
+  },
+  {
+    "text": "刚才更新后应用启动就闪退",
+    "label": "应用与数据故障",
+    "split": "train"
+  },
+  {
+    "text": "下载附件到一半就断开连接",
+    "label": "应用与数据故障",
+    "split": "train"
+  },
+  {
+    "text": "搜索列表一直显示加载中，没有结果",
+    "label": "应用与数据故障",
+    "split": "train"
+  },
+  {
+    "text": "昨天能打开的报表今天提示服务不可用",
+    "label": "应用与数据故障",
+    "split": "train"
+  },
+  {
+    "text": "API 返回 502，重试多次仍然失败",
+    "label": "应用与数据故障",
+    "split": "train"
+  },
+  {
+    "text": "保存成功后重新打开，刚填写的内容不见了",
+    "label": "应用与数据故障",
+    "split": "train"
+  },
+  {
+    "text": "文件上传到百分之九十九就卡住",
+    "label": "应用与数据故障",
+    "split": "train"
+  },
+  {
+    "text": "网页按钮错位，无法点击提交",
+    "label": "应用与数据故障",
+    "split": "train"
+  },
+  {
+    "text": "工作台图片加载失败，显示破损图标",
+    "label": "应用与数据故障",
+    "split": "train"
+  },
+  {
+    "text": "提交表单提示数据库连接异常",
+    "label": "应用与数据故障",
+    "split": "train"
+  },
+  {
+    "text": "系统时间显示错误，所有记录都差九个小时",
+    "label": "应用与数据故障",
+    "split": "train"
+  },
+  {
+    "text": "浏览器控制台出现网络连接被重置",
+    "label": "网络与连接",
+    "split": "train"
+  },
+  {
+    "text": "已支持的批量导入功能今天处理失败",
+    "label": "应用与数据故障",
+    "split": "train"
+  },
+  {
+    "text": "通知以前正常，现在有新消息也收不到",
+    "label": "应用与数据故障",
+    "split": "train"
+  },
+  {
+    "text": "导出的 Excel 文件损坏，打不开",
+    "label": "应用与数据故障",
+    "split": "train"
+  },
+  {
+    "text": "手机端页面布局重叠，看不到确认按钮",
+    "label": "应用与数据故障",
+    "split": "train"
+  },
+  {
+    "text": "服务频繁断线，几分钟就要刷新一次",
+    "label": "网络与连接",
+    "split": "train"
+  },
+  {
+    "text": "同一条记录保存后出现了两个副本",
+    "label": "应用与数据故障",
+    "split": "train"
+  },
+  {
+    "text": "输入中文后显示问号，疑似编码异常",
+    "label": "应用与数据故障",
+    "split": "train"
+  },
+  {
+    "text": "任务一直停留在执行中，半小时没有进度",
+    "label": "应用与数据故障",
+    "split": "train"
+  },
+  {
+    "text": "上传合法格式的 PDF 却提示解析错误",
+    "label": "应用与数据故障",
+    "split": "train"
+  },
+  {
+    "text": "列表翻到第二页出现 500 错误",
+    "label": "应用与数据故障",
+    "split": "train"
+  },
+  {
+    "text": "附件预览出现空白，但原文件可以打开",
+    "label": "应用与数据故障",
+    "split": "train"
+  },
+  {
+    "text": "目前只能逐条分配工单，希望支持批量指派",
+    "label": "功能与改进需求",
+    "split": "train"
+  },
+  {
+    "text": "建议添加处理时限到期前的提醒",
+    "label": "功能与改进需求",
+    "split": "train"
+  },
+  {
+    "text": "想给工单增加自定义字段",
+    "label": "功能与改进需求",
+    "split": "train"
+  },
+  {
+    "text": "希望系统提供操作历史的导出入口",
+    "label": "功能与改进需求",
+    "split": "train"
+  },
+  {
+    "text": "能否新增审批流程配置功能",
+    "label": "功能与改进需求",
+    "split": "train"
+  },
+  {
+    "text": "建议支持将常用查询保存为视图",
+    "label": "功能与改进需求",
+    "split": "train"
+  },
+  {
+    "text": "目前没有移动端推送，希望后续支持",
+    "label": "功能与改进需求",
+    "split": "train"
+  },
+  {
+    "text": "希望新增 webhook 通知接口",
+    "label": "功能与改进需求",
+    "split": "train"
+  },
+  {
+    "text": "建议让管理员自定义工单编号规则",
+    "label": "功能与改进需求",
+    "split": "train"
+  },
+  {
+    "text": "能否为知识文档增加版本对比",
+    "label": "功能与改进需求",
+    "split": "train"
+  },
+  {
+    "text": "希望增加按负责人统计的仪表盘",
+    "label": "功能与改进需求",
+    "split": "train"
+  },
+  {
+    "text": "建议允许给一条工单添加多个标签",
+    "label": "功能与改进需求",
+    "split": "train"
+  },
+  {
+    "text": "想在回复编辑器中使用预设模板",
+    "label": "功能与改进需求",
+    "split": "train"
+  },
+  {
+    "text": "能否增加相似工单自动合并的选项",
+    "label": "功能与改进需求",
+    "split": "train"
+  },
+  {
+    "text": "希望新增文档全文搜索功能",
+    "label": "功能与改进需求",
+    "split": "train"
+  },
+  {
+    "text": "建议提供工单满意度调查",
+    "label": "功能与改进需求",
+    "split": "train"
+  },
+  {
+    "text": "需要新增只读观察员角色",
+    "label": "功能与改进需求",
+    "split": "train"
+  },
+  {
+    "text": "希望支持从邮件自动创建工单",
+    "label": "功能与改进需求",
+    "split": "train"
+  },
+  {
+    "text": "建议增加一键复制工单链接的按钮",
+    "label": "功能与改进需求",
+    "split": "train"
+  },
+  {
+    "text": "目前不能设置重复任务，希望增加周期工单",
+    "label": "功能与改进需求",
+    "split": "train"
+  },
+  {
+    "text": "想要新增按部门控制知识可见性的功能",
+    "label": "功能与改进需求",
+    "split": "train"
+  },
+  {
+    "text": "能否支持把列表列宽保存下来",
+    "label": "功能与改进需求",
+    "split": "train"
+  },
+  {
+    "text": "希望增加英文和中文切换选项",
+    "label": "功能与改进需求",
+    "split": "train"
+  },
+  {
+    "text": "建议提供数据保留期限的配置入口",
+    "label": "功能与改进需求",
+    "split": "train"
+  },
+  {
+    "text": "出差回来验证手机丢了，现在身份校验这一步过不去",
+    "label": "账号与认证",
+    "split": "test"
+  },
+  {
+    "text": "点开入职邀请说已失效，怎样重新激活用户",
+    "label": "账号与认证",
+    "split": "test"
+  },
+  {
+    "text": "输入工号后认证中心说没有应用授权",
+    "label": "权限与访问",
+    "split": "test"
+  },
+  {
+    "text": "安全邮箱不再使用，能帮我迁移账号绑定吗",
+    "label": "账号与认证",
+    "split": "test"
+  },
+  {
+    "text": "验证邮件晚到了十分钟，里面的链接已经无效",
+    "label": "账号与认证",
+    "split": "test"
+  },
+  {
+    "text": "想撤销其他电脑上的登录会话",
+    "label": "账号与认证",
+    "split": "test"
+  },
+  {
+    "text": "人事通知要封停前同事的账户",
+    "label": "账号与认证",
+    "split": "test"
+  },
+  {
+    "text": "每次进系统都弹出重新认证，登录会话保不住",
+    "label": "账号与认证",
+    "split": "test"
+  },
+  {
+    "text": "财务已汇款两天，购买页面还是待支付状态",
+    "label": "支付与账单",
+    "split": "test"
+  },
+  {
+    "text": "这次续约多算了五个席位，请核对收费",
+    "label": "支付与账单",
+    "split": "test"
+  },
+  {
+    "text": "电子票据的购方名称有错，需要重新开票",
+    "label": "支付与账单",
+    "split": "test"
+  },
+  {
+    "text": "余额里没有收到承诺的退费差额",
+    "label": "支付与账单",
+    "split": "test"
+  },
+  {
+    "text": "测试期间不小心买了两份套餐，能退一份吗",
+    "label": "支付与账单",
+    "split": "test"
+  },
+  {
+    "text": "公司报销需要带税额的付款凭证",
+    "label": "支付与账单",
+    "split": "test"
+  },
+  {
+    "text": "银行账上有交易记录，可订单却显示付款失败",
+    "label": "支付与账单",
+    "split": "test"
+  },
+  {
+    "text": "停用服务后的下个月仍有一笔续费扣款",
+    "label": "支付与账单",
+    "split": "test"
+  },
+  {
+    "text": "点开历史附件预览一片空白，下载后文件是正常的",
+    "label": "应用与数据故障",
+    "split": "test"
+  },
+  {
+    "text": "后台任务跑了一整晚还在转，进度没有变化",
+    "label": "应用与数据故障",
+    "split": "test"
+  },
+  {
+    "text": "表格翻页时报服务器内部错误，首页正常",
+    "label": "应用与数据故障",
+    "split": "test"
+  },
+  {
+    "text": "原来可以批量导入，今天同样的文件全都失败",
+    "label": "应用与数据故障",
+    "split": "test"
+  },
+  {
+    "text": "刚输入的备注显示保存成功，刷新却消失了",
+    "label": "应用与数据故障",
+    "split": "test"
+  },
+  {
+    "text": "所有同事今早 VPN 都提示连接超时",
+    "label": "网络与连接",
+    "split": "test"
+  },
+  {
+    "text": "导出的表格被办公软件提示文件格式损坏",
+    "label": "应用与数据故障",
+    "split": "test"
+  },
+  {
+    "text": "手机浏览器里的提交按钮被其他文字盖住了",
+    "label": "应用与数据故障",
+    "split": "test"
+  },
+  {
+    "text": "现在每次都要重设筛选条件，能加一个保存查询的功能吗",
+    "label": "功能与改进需求",
+    "split": "test"
+  },
+  {
+    "text": "希望员工回邮件时能自动追加到工单记录",
+    "label": "功能与改进需求",
+    "split": "test"
+  },
+  {
+    "text": "能不能让每个部门有自己的知识可见范围",
+    "label": "功能与改进需求",
+    "split": "test"
+  },
+  {
+    "text": "建议在统计页增加各负责人的平均响应时间",
+    "label": "功能与改进需求",
+    "split": "test"
+  },
+  {
+    "text": "想要一个工单编号格式设置页面",
+    "label": "功能与改进需求",
+    "split": "test"
+  },
+  {
+    "text": "目前没有历史版本对照，希望知识编辑器补上",
+    "label": "功能与改进需求",
+    "split": "test"
+  },
+  {
+    "text": "希望新建工单时可以直接套用常用内容模板",
+    "label": "功能与改进需求",
+    "split": "test"
+  },
+  {
+    "text": "建议提供每周自动重复创建任务的能力",
+    "label": "功能与改进需求",
+    "split": "test"
+  },
+  {
+    "text": "密码重置后旧密码还能登录吗",
+    "label": "账号与认证",
+    "split": "train"
+  },
+  {
+    "text": "登录口令忘记了，需要找回账户",
+    "label": "账号与认证",
+    "split": "train"
+  },
+  {
+    "text": "扫码认证显示二维码过期",
+    "label": "账号与认证",
+    "split": "train"
+  },
+  {
+    "text": "通行密钥验证失败，无法登录",
+    "label": "账号与认证",
+    "split": "train"
+  },
+  {
+    "text": "账号注册时邮箱验证不通过",
+    "label": "账号与认证",
+    "split": "train"
+  },
+  {
+    "text": "安全验证要求输入恢复代码",
+    "label": "账号与认证",
+    "split": "train"
+  },
+  {
+    "text": "更换设备后无法接收认证通知",
+    "label": "账号与认证",
+    "split": "train"
+  },
+  {
+    "text": "登录被要求输入一次性口令",
+    "label": "账号与认证",
+    "split": "train"
+  },
+  {
+    "text": "账户疑似被盗，希望冻结登录",
+    "label": "账号与认证",
+    "split": "train"
+  },
+  {
+    "text": "修改密码后所有设备需要重新认证",
+    "label": "账号与认证",
+    "split": "train"
+  },
+  {
+    "text": "身份认证页面提示凭证无效",
+    "label": "账号与认证",
+    "split": "train"
+  },
+  {
+    "text": "忘记验证器密码无法完成认证",
+    "label": "账号与认证",
+    "split": "train"
+  },
+  {
+    "text": "注册账号提示邮箱已被占用",
+    "label": "账号与认证",
+    "split": "train"
+  },
+  {
+    "text": "手机登录的生物识别验证不通过",
+    "label": "账号与认证",
+    "split": "train"
+  },
+  {
+    "text": "重置账户密码的短信迟迟不到",
+    "label": "账号与认证",
+    "split": "train"
+  },
+  {
+    "text": "账号激活流程无法完成",
+    "label": "账号与认证",
+    "split": "train"
+  },
+  {
+    "text": "注销账号后是否可以重新注册",
+    "label": "账号与认证",
+    "split": "train"
+  },
+  {
+    "text": "公司统一身份认证提示登录失败",
+    "label": "账号与认证",
+    "split": "train"
+  },
+  {
+    "text": "用户名称和密码都忘记了",
+    "label": "账号与认证",
+    "split": "train"
+  },
+  {
+    "text": "多因素认证的备用设备已经损坏",
+    "label": "账号与认证",
+    "split": "train"
+  },
+  {
+    "text": "申请开通财务报表的查看权限",
+    "label": "权限与访问",
+    "split": "train"
+  },
+  {
+    "text": "账号可以登录，但无权查看项目",
+    "label": "权限与访问",
+    "split": "train"
+  },
+  {
+    "text": "请把我加入研发部门的用户组",
+    "label": "权限与访问",
+    "split": "train"
+  },
+  {
+    "text": "需要给新同事分配只读角色",
+    "label": "权限与访问",
+    "split": "train"
+  },
+  {
+    "text": "申请撤销外包人员的数据访问权限",
+    "label": "权限与访问",
+    "split": "train"
+  },
+  {
+    "text": "进入管理后台提示没有访问权限",
+    "label": "权限与访问",
+    "split": "train"
+  },
+  {
+    "text": "能看到工单但没有编辑权限",
+    "label": "权限与访问",
+    "split": "train"
+  },
+  {
+    "text": "申请增加知识库文档的下载权限",
+    "label": "权限与访问",
+    "split": "train"
+  },
+  {
+    "text": "部门调动后需要调整用户角色",
+    "label": "权限与访问",
+    "split": "train"
+  },
+  {
+    "text": "请授予项目负责人审批权限",
+    "label": "权限与访问",
+    "split": "train"
+  },
+  {
+    "text": "离职同事的管理员权限需要回收",
+    "label": "权限与访问",
+    "split": "train"
+  },
+  {
+    "text": "无权访问销售团队的共享目录",
+    "label": "权限与访问",
+    "split": "train"
+  },
+  {
+    "text": "需要临时开通测试环境访问权限",
+    "label": "权限与访问",
+    "split": "train"
+  },
+  {
+    "text": "普通成员不能修改项目配置，请授权",
+    "label": "权限与访问",
+    "split": "train"
+  },
+  {
+    "text": "管理员误把我的编辑权限取消了",
+    "label": "权限与访问",
+    "split": "train"
+  },
+  {
+    "text": "申请成为这个工作空间的成员",
+    "label": "权限与访问",
+    "split": "train"
+  },
+  {
+    "text": "只能查看自己的工单，希望授权查看团队工单",
+    "label": "权限与访问",
+    "split": "train"
+  },
+  {
+    "text": "提交审批时提示角色权限不足",
+    "label": "权限与访问",
+    "split": "train"
+  },
+  {
+    "text": "需要将账户从访客改为内部员工角色",
+    "label": "权限与访问",
+    "split": "train"
+  },
+  {
+    "text": "请移除前供应商对客户资料的访问授权",
+    "label": "权限与访问",
+    "split": "train"
+  },
+  {
+    "text": "共享文档显示需要所有者批准访问",
+    "label": "权限与访问",
+    "split": "train"
+  },
+  {
+    "text": "申请加入产品项目的协作成员名单",
+    "label": "权限与访问",
+    "split": "train"
+  },
+  {
+    "text": "下载报表提示权限不足，请开通",
+    "label": "权限与访问",
+    "split": "train"
+  },
+  {
+    "text": "账号正常，但未被授权访问这个应用",
+    "label": "权限与访问",
+    "split": "train"
+  },
+  {
+    "text": "希望把管理员角色转交给部门主管",
+    "label": "权限与访问",
+    "split": "train"
+  },
+  {
+    "text": "申请恢复调岗时被撤销的访问授权",
+    "label": "权限与访问",
+    "split": "train"
+  },
+  {
+    "text": "操作被拒绝，系统显示无执行权限",
+    "label": "权限与访问",
+    "split": "train"
+  },
+  {
+    "text": "需要设置一个员工的项目访问范围",
+    "label": "权限与访问",
+    "split": "train"
+  },
+  {
+    "text": "申请开通接口调用权限",
+    "label": "权限与访问",
+    "split": "train"
+  },
+  {
+    "text": "修改知识条目提示只有所有者可以编辑",
+    "label": "权限与访问",
+    "split": "train"
+  },
+  {
+    "text": "请给审计人员分配查看操作日志的权限",
+    "label": "权限与访问",
+    "split": "train"
+  },
+  {
+    "text": "加入公司后还没有团队空间的访问资格",
+    "label": "权限与访问",
+    "split": "train"
+  },
+  {
+    "text": "申请延长临时权限的有效期限",
+    "label": "权限与访问",
+    "split": "train"
+  },
+  {
+    "text": "请取消我的项目管理员身份",
+    "label": "权限与访问",
+    "split": "train"
+  },
+  {
+    "text": "新建工单提示没有创建权限",
+    "label": "权限与访问",
+    "split": "train"
+  },
+  {
+    "text": "能登录但看不到被授权的菜单",
+    "label": "权限与访问",
+    "split": "train"
+  },
+  {
+    "text": "申请授予同事管理知识库的角色",
+    "label": "权限与访问",
+    "split": "train"
+  },
+  {
+    "text": "跨部门协作需要开放指定文档的访问权限",
+    "label": "权限与访问",
+    "split": "train"
+  },
+  {
+    "text": "离开项目后仍有权限，请收回",
+    "label": "权限与访问",
+    "split": "train"
+  },
+  {
+    "text": "需要让实习生获得只读访问资格",
+    "label": "权限与访问",
+    "split": "train"
+  },
+  {
+    "text": "VPN 连接后无法访问内网地址",
+    "label": "网络与连接",
+    "split": "train"
+  },
+  {
+    "text": "办公室无线网络频繁掉线",
+    "label": "网络与连接",
+    "split": "train"
+  },
+  {
+    "text": "电脑获取不到 IP 地址",
+    "label": "网络与连接",
+    "split": "train"
+  },
+  {
+    "text": "DNS 解析失败，域名无法访问",
+    "label": "网络与连接",
+    "split": "train"
+  },
+  {
+    "text": "公司代理服务器连接超时",
+    "label": "网络与连接",
+    "split": "train"
+  },
+  {
+    "text": "网络切换后 VPN 隧道断开",
+    "label": "网络与连接",
+    "split": "train"
+  },
+  {
+    "text": "家里的网络正常但企业 VPN 连不上",
+    "label": "网络与连接",
+    "split": "train"
+  },
+  {
+    "text": "内网网关无法连通，ping 一直超时",
+    "label": "网络与连接",
+    "split": "train"
+  },
+  {
+    "text": "办公区网线接上后仍然没有网络",
+    "label": "网络与连接",
+    "split": "train"
+  },
+  {
+    "text": "WiFi 显示已连接但无法上网",
+    "label": "网络与连接",
+    "split": "train"
+  },
+  {
+    "text": "远程桌面连接被网络中断",
+    "label": "网络与连接",
+    "split": "train"
+  },
+  {
+    "text": "VPN 提示隧道建立失败",
+    "label": "网络与连接",
+    "split": "train"
+  },
+  {
+    "text": "代理配置后所有网站都打不开",
+    "label": "网络与连接",
+    "split": "train"
+  },
+  {
+    "text": "公司网络访问外部网站特别慢",
+    "label": "网络与连接",
+    "split": "train"
+  },
+  {
+    "text": "电脑提示 IP 地址冲突",
+    "label": "网络与连接",
+    "split": "train"
+  },
+  {
+    "text": "DNS 服务器没有响应",
+    "label": "网络与连接",
+    "split": "train"
+  },
+  {
+    "text": "有线网络正常，无线网络无法连接",
+    "label": "网络与连接",
+    "split": "train"
+  },
+  {
+    "text": "跨区域办公的网络延迟很高",
+    "label": "网络与连接",
+    "split": "train"
+  },
+  {
+    "text": "切换热点后内网连接失效",
+    "label": "网络与连接",
+    "split": "train"
+  },
+  {
+    "text": "公司网络丢包严重，视频会议断断续续",
+    "label": "网络与连接",
+    "split": "train"
+  },
+  {
+    "text": "VPN 客户端提示网关不可达",
+    "label": "网络与连接",
+    "split": "train"
+  },
+  {
+    "text": "访问内网服务时域名解析超时",
+    "label": "网络与连接",
+    "split": "train"
+  },
+  {
+    "text": "路由器重启后电脑不能联网",
+    "label": "网络与连接",
+    "split": "train"
+  },
+  {
+    "text": "局域网中的其他电脑也无法连通网关",
+    "label": "网络与连接",
+    "split": "train"
+  },
+  {
+    "text": "代理认证成功后网络连接仍被重置",
+    "label": "网络与连接",
+    "split": "train"
+  },
+  {
+    "text": "网络图标显示无互联网连接",
+    "label": "网络与连接",
+    "split": "train"
+  },
+  {
+    "text": "远程办公的 VPN 每隔几分钟自动断开",
+    "label": "网络与连接",
+    "split": "train"
+  },
+  {
+    "text": "网络测速正常，但访问公司内网超时",
+    "label": "网络与连接",
+    "split": "train"
+  },
+  {
+    "text": "无线网络信号太弱导致频繁断线",
+    "label": "网络与连接",
+    "split": "train"
+  },
+  {
+    "text": "企业网络无法分配 DHCP 地址",
+    "label": "网络与连接",
+    "split": "train"
+  },
+  {
+    "text": "修改 DNS 后还是打不开内部域名",
+    "label": "网络与连接",
+    "split": "train"
+  },
+  {
+    "text": "使用网线连接时提示网络未识别",
+    "label": "网络与连接",
+    "split": "train"
+  },
+  {
+    "text": "访问服务器端口时连接被拒绝",
+    "label": "网络与连接",
+    "split": "train"
+  },
+  {
+    "text": "网关连通但 DNS 查询失败",
+    "label": "网络与连接",
+    "split": "train"
+  },
+  {
+    "text": "办公室整层楼无法上网",
+    "label": "网络与连接",
+    "split": "train"
+  },
+  {
+    "text": "VPN 握手失败并反复重新连接",
+    "label": "网络与连接",
+    "split": "train"
+  },
+  {
+    "text": "公司代理地址无法建立 TCP 连接",
+    "label": "网络与连接",
+    "split": "train"
+  },
+  {
+    "text": "网络切换后远程会话掉线",
+    "label": "网络与连接",
+    "split": "train"
+  },
+  {
+    "text": "笔记本连不上公司无线热点",
+    "label": "网络与连接",
+    "split": "train"
+  },
+  {
+    "text": "内外网都不通，需要排查网络连接",
+    "label": "网络与连接",
+    "split": "train"
+  },
+  {
+    "text": "删除筛选条件后列表仍然为空",
+    "label": "应用与数据故障",
+    "split": "train"
+  },
+  {
+    "text": "应用启动时提示配置文件损坏",
+    "label": "应用与数据故障",
+    "split": "train"
+  },
+  {
+    "text": "保存联系人后电话号码变成空值",
+    "label": "应用与数据故障",
+    "split": "train"
+  },
+  {
+    "text": "报表统计数量与实际记录数量不一致",
+    "label": "应用与数据故障",
+    "split": "train"
+  },
+  {
+    "text": "上传附件成功但列表里没有文件",
+    "label": "应用与数据故障",
+    "split": "train"
+  },
+  {
+    "text": "页面点击下一步出现 JavaScript 错误",
+    "label": "应用与数据故障",
+    "split": "train"
+  },
+  {
+    "text": "已经支持的搜索功能返回重复记录",
+    "label": "应用与数据故障",
+    "split": "train"
+  },
+  {
+    "text": "系统导出的中文列名全是乱码",
+    "label": "应用与数据故障",
+    "split": "train"
+  },
+  {
+    "text": "修改记录后刷新又恢复成旧值",
+    "label": "应用与数据故障",
+    "split": "train"
+  },
+  {
+    "text": "批量操作完成后部分数据丢失",
+    "label": "应用与数据故障",
+    "split": "train"
+  },
+  {
+    "text": "应用更新后无法打开设置页面",
+    "label": "应用与数据故障",
+    "split": "train"
+  },
+  {
+    "text": "导入文件时出现数据库约束错误",
+    "label": "应用与数据故障",
+    "split": "train"
+  },
+  {
+    "text": "系统任务运行到一半异常退出",
+    "label": "应用与数据故障",
+    "split": "train"
+  },
+  {
+    "text": "页面下拉菜单点开后无法选择",
+    "label": "应用与数据故障",
+    "split": "train"
+  },
+  {
+    "text": "仪表盘数值停止更新",
+    "label": "应用与数据故障",
+    "split": "train"
+  },
+  {
+    "text": "已读消息仍显示未读角标",
+    "label": "应用与数据故障",
+    "split": "train"
+  },
+  {
+    "text": "文件预览提示内部服务异常",
+    "label": "应用与数据故障",
+    "split": "train"
+  },
+  {
+    "text": "应用占用内存过高并闪退",
+    "label": "应用与数据故障",
+    "split": "train"
+  },
+  {
+    "text": "列表排序没有按照选择的日期生效",
+    "label": "应用与数据故障",
+    "split": "train"
+  },
+  {
+    "text": "恢复已删除记录时系统返回错误",
+    "label": "应用与数据故障",
+    "split": "train"
+  },
+  {
+    "text": "按年付费的订阅为什么又按月扣款",
+    "label": "支付与账单",
+    "split": "train"
+  },
+  {
+    "text": "请提供订单的含税付款明细",
+    "label": "支付与账单",
+    "split": "train"
+  },
+  {
+    "text": "发票需要增加公司的注册地址",
+    "label": "支付与账单",
+    "split": "train"
+  },
+  {
+    "text": "申请退回未使用月份的服务费",
+    "label": "支付与账单",
+    "split": "train"
+  },
+  {
+    "text": "账单上的折扣没有按合同计算",
+    "label": "支付与账单",
+    "split": "train"
+  },
+  {
+    "text": "付款后套餐额度没有到账",
+    "label": "支付与账单",
+    "split": "train"
+  },
+  {
+    "text": "汇款附言填错导致订单没有核销",
+    "label": "支付与账单",
+    "split": "train"
+  },
+  {
+    "text": "财务要求补开发票的税率说明",
+    "label": "支付与账单",
+    "split": "train"
+  },
+  {
+    "text": "信用卡扣款成功但订单一直待支付",
+    "label": "支付与账单",
+    "split": "train"
+  },
+  {
+    "text": "续约报价和结算账单金额不一致",
+    "label": "支付与账单",
+    "split": "train"
+  },
+  {
+    "text": "需要取消下一期自动扣费",
+    "label": "支付与账单",
+    "split": "train"
+  },
+  {
+    "text": "请核对本季度的订阅费用",
+    "label": "支付与账单",
+    "split": "train"
+  },
+  {
+    "text": "发票收件邮箱填错了，需要重发",
+    "label": "支付与账单",
+    "split": "train"
+  },
+  {
+    "text": "申请退款被驳回，想了解原因",
+    "label": "支付与账单",
+    "split": "train"
+  },
+  {
+    "text": "账单显示已逾期但已经付款",
+    "label": "支付与账单",
+    "split": "train"
+  },
+  {
+    "text": "支付平台收取了额外手续费",
+    "label": "支付与账单",
+    "split": "train"
+  },
+  {
+    "text": "套餐升级后剩余费用如何抵扣",
+    "label": "支付与账单",
+    "split": "train"
+  },
+  {
+    "text": "采购需要订单的正式收款凭证",
+    "label": "支付与账单",
+    "split": "train"
+  },
+  {
+    "text": "电子发票下载链接已失效，请补发",
+    "label": "支付与账单",
+    "split": "train"
+  },
+  {
+    "text": "转账时多付的金额能退回吗",
+    "label": "支付与账单",
+    "split": "train"
+  },
+  {
+    "text": "建议新增工单处理时长趋势图",
+    "label": "功能与改进需求",
+    "split": "train"
+  },
+  {
+    "text": "希望提供知识库文章收藏功能",
+    "label": "功能与改进需求",
+    "split": "train"
+  },
+  {
+    "text": "能否增加按标签订阅通知的功能",
+    "label": "功能与改进需求",
+    "split": "train"
+  },
+  {
+    "text": "希望在移动端支持语音录入工单",
+    "label": "功能与改进需求",
+    "split": "train"
+  },
+  {
+    "text": "建议新增工单依赖关系视图",
+    "label": "功能与改进需求",
+    "split": "train"
+  },
+  {
+    "text": "目前没有批量关闭操作，希望增加",
+    "label": "功能与改进需求",
+    "split": "train"
+  },
+  {
+    "text": "希望提供可配置的工单审批节点",
+    "label": "功能与改进需求",
+    "split": "train"
+  },
+  {
+    "text": "建议新增导出 PDF 的选项",
+    "label": "功能与改进需求",
+    "split": "train"
+  },
+  {
+    "text": "能否增加节假日自动回复功能",
+    "label": "功能与改进需求",
+    "split": "train"
+  },
+  {
+    "text": "希望增加知识文章的有效期提醒",
+    "label": "功能与改进需求",
+    "split": "train"
+  },
+  {
+    "text": "建议支持自定义统计维度",
+    "label": "功能与改进需求",
+    "split": "train"
+  },
+  {
+    "text": "能否新增客户反馈评分入口",
+    "label": "功能与改进需求",
+    "split": "train"
+  },
+  {
+    "text": "希望提供常见问题推荐列表",
+    "label": "功能与改进需求",
+    "split": "train"
+  },
+  {
+    "text": "建议增加工单处理人的负载视图",
+    "label": "功能与改进需求",
+    "split": "train"
+  },
+  {
+    "text": "目前无法定时发送日报，希望支持",
+    "label": "功能与改进需求",
+    "split": "train"
+  },
+  {
+    "text": "希望新增跨工单关联链接",
+    "label": "功能与改进需求",
+    "split": "train"
+  },
+  {
+    "text": "建议提供文档目录树导航",
+    "label": "功能与改进需求",
+    "split": "train"
+  },
+  {
+    "text": "想要新增按周查看任务的日历模式",
+    "label": "功能与改进需求",
+    "split": "train"
+  },
+  {
+    "text": "能否增加搜索结果高亮功能",
+    "label": "功能与改进需求",
+    "split": "train"
+  },
+  {
+    "text": "希望系统支持自定义快捷回复分组",
+    "label": "功能与改进需求",
+    "split": "train"
+  },
+  {
+    "text": "输入动态口令后说凭证过期，卡在登录环节",
+    "label": "账号与认证",
+    "split": "test"
+  },
+  {
+    "text": "扫码进系统的二维码刚打开就失效",
+    "label": "账号与认证",
+    "split": "test"
+  },
+  {
+    "text": "换了验证器以后账号进不去了",
+    "label": "账号与认证",
+    "split": "test"
+  },
+  {
+    "text": "密码找回链接无法完成身份验证",
+    "label": "账号与认证",
+    "split": "test"
+  },
+  {
+    "text": "刚注册的账户没有收到激活通知",
+    "label": "账号与认证",
+    "split": "test"
+  },
+  {
+    "text": "丢失备用恢复码，双因素认证做不了",
+    "label": "账号与认证",
+    "split": "test"
+  },
+  {
+    "text": "我能正常登录，但财务空间不让我进去，请授权",
+    "label": "权限与访问",
+    "split": "test"
+  },
+  {
+    "text": "项目里只给了查看角色，需要升级为可编辑",
+    "label": "权限与访问",
+    "split": "test"
+  },
+  {
+    "text": "外包合同结束了，请回收共享资料的访问资格",
+    "label": "权限与访问",
+    "split": "test"
+  },
+  {
+    "text": "申请加入审计组并查看操作记录",
+    "label": "权限与访问",
+    "split": "test"
+  },
+  {
+    "text": "点击删除说权限不够，请管理员开通",
+    "label": "权限与访问",
+    "split": "test"
+  },
+  {
+    "text": "部门调整后需要变更可访问的项目范围",
+    "label": "权限与访问",
+    "split": "test"
+  },
+  {
+    "text": "请让新成员获得下载合同附件的权限",
+    "label": "权限与访问",
+    "split": "test"
+  },
+  {
+    "text": "临时访问资格到期了，需要续期",
+    "label": "权限与访问",
+    "split": "test"
+  },
+  {
+    "text": "我不是这个文档的所有者，怎样申请编辑授权",
+    "label": "权限与访问",
+    "split": "test"
+  },
+  {
+    "text": "管理员身份要转给接任的负责人",
+    "label": "权限与访问",
+    "split": "test"
+  },
+  {
+    "text": "想把供应商从团队成员名单里移除",
+    "label": "权限与访问",
+    "split": "test"
+  },
+  {
+    "text": "登录没有问题，只有审批操作提示未授权",
+    "label": "权限与访问",
+    "split": "test"
+  },
+  {
+    "text": "整间办公室的无线都断了，网页也打不开",
+    "label": "网络与连接",
+    "split": "test"
+  },
+  {
+    "text": "远程隧道刚建立就掉线，但家庭宽带正常",
+    "label": "网络与连接",
+    "split": "test"
+  },
+  {
+    "text": "电脑拿不到局域网地址，网络显示未识别",
+    "label": "网络与连接",
+    "split": "test"
+  },
+  {
+    "text": "查询内部域名时提示 DNS 无响应",
+    "label": "网络与连接",
+    "split": "test"
+  },
+  {
+    "text": "代理服务器的端口始终连接不上",
+    "label": "网络与连接",
+    "split": "test"
+  },
+  {
+    "text": "VPN 提示无法与网关完成握手",
+    "label": "网络与连接",
+    "split": "test"
+  },
+  {
+    "text": "有线可以上网，换成无线就不行",
+    "label": "网络与连接",
+    "split": "test"
+  },
+  {
+    "text": "连公司网络开视频会一直丢包",
+    "label": "网络与连接",
+    "split": "test"
+  },
+  {
+    "text": "网关 ping 不通，同一网络的同事也这样",
+    "label": "网络与连接",
+    "split": "test"
+  },
+  {
+    "text": "换手机热点后远程桌面断开了",
+    "label": "网络与连接",
+    "split": "test"
+  },
+  {
+    "text": "电脑提示地址冲突，内网访问不了",
+    "label": "网络与连接",
+    "split": "test"
+  },
+  {
+    "text": "企业代理总是超时导致网页无法打开",
+    "label": "网络与连接",
+    "split": "test"
+  },
+  {
+    "text": "打开设置窗口后软件直接退出了",
+    "label": "应用与数据故障",
+    "split": "test"
+  },
+  {
+    "text": "昨天录入的联系方式今天显示为空",
+    "label": "应用与数据故障",
+    "split": "test"
+  },
+  {
+    "text": "点击排序后日期顺序完全没有变化",
+    "label": "应用与数据故障",
+    "split": "test"
+  },
+  {
+    "text": "PDF 预览按钮点下去提示服务器错误",
+    "label": "应用与数据故障",
+    "split": "test"
+  },
+  {
+    "text": "导入后记录被重复创建了三次",
+    "label": "应用与数据故障",
+    "split": "test"
+  },
+  {
+    "text": "看板的统计数字一天没有刷新",
+    "label": "应用与数据故障",
+    "split": "test"
+  },
+  {
+    "text": "合同有八折优惠，结算单却按原价收费",
+    "label": "支付与账单",
+    "split": "test"
+  },
+  {
+    "text": "对公打款多了一百元，请退回差额",
+    "label": "支付与账单",
+    "split": "test"
+  },
+  {
+    "text": "退款显示成功但收款账户没有入账",
+    "label": "支付与账单",
+    "split": "test"
+  },
+  {
+    "text": "报销需要补一张含公司地址的发票",
+    "label": "支付与账单",
+    "split": "test"
+  },
+  {
+    "text": "年度套餐购买后又收到每月扣费通知",
+    "label": "支付与账单",
+    "split": "test"
+  },
+  {
+    "text": "账期已结清为什么还显示欠款",
+    "label": "支付与账单",
+    "split": "test"
+  },
+  {
+    "text": "建议给知识文章增加到期自动提醒的能力",
+    "label": "功能与改进需求",
+    "split": "test"
+  },
+  {
+    "text": "想按处理人查看工作负荷，目前没有这个报表",
+    "label": "功能与改进需求",
+    "split": "test"
+  },
+  {
+    "text": "希望在搜索命中词上显示醒目标记",
+    "label": "功能与改进需求",
+    "split": "test"
+  },
+  {
+    "text": "能加一个收藏常用操作手册的入口吗",
+    "label": "功能与改进需求",
+    "split": "test"
+  },
+  {
+    "text": "建议以后支持按节假日设置自动回复",
+    "label": "功能与改进需求",
+    "split": "test"
+  },
+  {
+    "text": "现在只有 Excel 导出，想新增 PDF 格式",
+    "label": "功能与改进需求",
+    "split": "test"
+  },
+  {
+    "text": "通行密钥绑定新电脑时身份校验失败",
+    "label": "账号与认证",
+    "split": "train"
+  },
+  {
+    "text": "邮箱登录链接提示已经使用过",
+    "label": "账号与认证",
+    "split": "train"
+  },
+  {
+    "text": "账户的安全问题答案忘记了",
+    "label": "账号与认证",
+    "split": "train"
+  },
+  {
+    "text": "短信认证的手机号码已经注销",
+    "label": "账号与认证",
+    "split": "train"
+  },
+  {
+    "text": "重设密码时提示两次口令不一致",
+    "label": "账号与认证",
+    "split": "train"
+  },
+  {
+    "text": "想撤销丢失平板上的登录状态",
+    "label": "账号与认证",
+    "split": "train"
+  },
+  {
+    "text": "申请获得仓库库存报表的只读授权",
+    "label": "权限与访问",
+    "split": "train"
+  },
+  {
+    "text": "实习期结束请收回测试项目权限",
+    "label": "权限与访问",
+    "split": "train"
+  },
+  {
+    "text": "审批专员需要开通费用审核角色",
+    "label": "权限与访问",
+    "split": "train"
+  },
+  {
+    "text": "账户登录正常但无权查看客户合同",
+    "label": "权限与访问",
+    "split": "train"
+  },
+  {
+    "text": "请把离任主管的审批授权转给代理人",
+    "label": "权限与访问",
+    "split": "train"
+  },
+  {
+    "text": "需要给合作方限定一个目录的读取权限",
+    "label": "权限与访问",
+    "split": "train"
+  },
+  {
+    "text": "收据上的服务周期与购买时约定不符",
+    "label": "支付与账单",
+    "split": "train"
+  },
+  {
+    "text": "预付的充值金额没有计入账户余额",
+    "label": "支付与账单",
+    "split": "train"
+  },
+  {
+    "text": "需要将错误发票红冲后重新开具",
+    "label": "支付与账单",
+    "split": "train"
+  },
+  {
+    "text": "购买附加席位时扣费次数异常",
+    "label": "支付与账单",
+    "split": "train"
+  },
+  {
+    "text": "停用的信用卡仍被作为订阅付款卡",
+    "label": "支付与账单",
+    "split": "train"
+  },
+  {
+    "text": "申请查询上一年度每季度的费用明细",
+    "label": "支付与账单",
+    "split": "train"
+  },
+  {
+    "text": "更换办公路由器后内网地址不能访问",
+    "label": "网络与连接",
+    "split": "train"
+  },
+  {
+    "text": "连接有线网络时 DHCP 分配失败",
+    "label": "网络与连接",
+    "split": "train"
+  },
+  {
+    "text": "VPN 提示远端隧道协商失败",
+    "label": "网络与连接",
+    "split": "train"
+  },
+  {
+    "text": "无线热点连接成功但网关没有响应",
+    "label": "网络与连接",
+    "split": "train"
+  },
+  {
+    "text": "网络代理无法解析目标服务器地址",
+    "label": "网络与连接",
+    "split": "train"
+  },
+  {
+    "text": "跨办公室传输时网络丢包明显",
+    "label": "网络与连接",
+    "split": "train"
+  },
+  {
+    "text": "编辑表格时撤销操作恢复了错误的内容",
+    "label": "应用与数据故障",
+    "split": "train"
+  },
+  {
+    "text": "上传头像后个人资料页仍展示旧图片",
+    "label": "应用与数据故障",
+    "split": "train"
+  },
+  {
+    "text": "应用打印预览中的文字被截断",
+    "label": "应用与数据故障",
+    "split": "train"
+  },
+  {
+    "text": "拖动任务卡片后状态没有保存",
+    "label": "应用与数据故障",
+    "split": "train"
+  },
+  {
+    "text": "表单日期控件无法选择月底日期",
+    "label": "应用与数据故障",
+    "split": "train"
+  },
+  {
+    "text": "后台批处理显示完成但结果文件为空",
+    "label": "应用与数据故障",
+    "split": "train"
+  },
+  {
+    "text": "希望提供表单字段的条件显示功能",
+    "label": "功能与改进需求",
+    "split": "train"
+  },
+  {
+    "text": "建议支持把常用报表固定在首页",
+    "label": "功能与改进需求",
+    "split": "train"
+  },
+  {
+    "text": "想新增按项目订阅知识更新的能力",
+    "label": "功能与改进需求",
+    "split": "train"
+  },
+  {
+    "text": "希望可以在工单中绘制简单流程图",
+    "label": "功能与改进需求",
+    "split": "train"
+  },
+  {
+    "text": "建议提供批量调整标签颜色的功能",
+    "label": "功能与改进需求",
+    "split": "train"
+  },
+  {
+    "text": "能否新增面向访客的帮助中心入口",
+    "label": "功能与改进需求",
+    "split": "train"
   }
 ]

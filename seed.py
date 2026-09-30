@@ -13,10 +13,10 @@ def seed(ws):
         doc=ws.save_document({'title':p.stem,'filename':p.name,'content':p.read_text(),'sample':True})
         jobs.append(doc['job_id'])
     rows=[
-      {'title':'VPN 连接失败，提示认证超时','description':'今天早上在家办公，VPN 一直提示认证超时，无法访问内部系统。网页可以正常打开，昨天还能连接。设备为 Mac。','category':'系统故障','priority':'高','requester':'陈晓 · 研发'},
-      {'title':'更换手机后无法完成双重验证','description':'换了新手机，登录内部账号需要验证码，但旧手机已无法使用。希望恢复账号访问。','category':'账号登录','priority':'普通','requester':'林悦 · 设计'},
-      {'title':'浏览器打开工作台后白屏','description':'更新浏览器后，工作台页面一直白屏。其他网站正常，同事可以正常访问。','category':'系统故障','priority':'普通','requester':'周宁 · 运营'},
-      {'title':'希望工单支持批量导出','description':'每周需要汇总已解决的工单，希望能够按时间范围导出。','category':'功能需求','priority':'低','requester':'许安 · IT 支持'},
+      {'title':'VPN 连接失败，提示认证超时','description':'今天早上在家办公，VPN 一直提示认证超时，无法访问内部系统。网页可以正常打开，昨天还能连接。设备为 Mac。','category':'网络与连接','priority':'高','requester':'陈晓 · 研发'},
+      {'title':'更换手机后无法完成双重验证','description':'换了新手机，登录内部账号需要验证码，但旧手机已无法使用。希望恢复账号访问。','category':'账号与认证','priority':'普通','requester':'林悦 · 设计'},
+      {'title':'浏览器打开工作台后白屏','description':'更新浏览器后，工作台页面一直白屏。其他网站正常，同事可以正常访问。','category':'应用与数据故障','priority':'普通','requester':'周宁 · 运营'},
+      {'title':'希望工单支持批量导出','description':'每周需要汇总已解决的工单，希望能够按时间范围导出。','category':'功能与改进需求','priority':'低','requester':'许安 · IT 支持'},
     ]
     for i,r in enumerate(rows):
         t=ws.create_ticket({**r,'sample':True})

@@ -1,182 +1,772 @@
 {
-  "train_count": 48,
-  "vocabulary_size": 325,
-  "labels": [
-    "功能需求",
-    "支付账单",
-    "系统故障",
-    "账号登录"
-  ],
-  "accuracy": 1.0,
-  "macro_f1": 1.0,
-  "test_count": 16,
+  "accuracy": 0.8645833333333334,
+  "macro_f1": 0.9231716761939887,
+  "test_count": 96,
   "matrix": {
-    "功能需求": {
-      "功能需求": 4,
-      "支付账单": 0,
-      "系统故障": 0,
-      "账号登录": 0,
-      "需要人工判断": 0
+    "功能与改进需求": {
+      "功能与改进需求": 16,
+      "应用与数据故障": 0,
+      "支付与账单": 0,
+      "权限与访问": 0,
+      "网络与连接": 0,
+      "账号与认证": 0,
+      "需要人工判断": 2
     },
-    "支付账单": {
-      "功能需求": 0,
-      "支付账单": 4,
-      "系统故障": 0,
-      "账号登录": 0,
-      "需要人工判断": 0
+    "应用与数据故障": {
+      "功能与改进需求": 0,
+      "应用与数据故障": 12,
+      "支付与账单": 0,
+      "权限与访问": 0,
+      "网络与连接": 0,
+      "账号与认证": 1,
+      "需要人工判断": 4
     },
-    "系统故障": {
-      "功能需求": 0,
-      "支付账单": 0,
-      "系统故障": 4,
-      "账号登录": 0,
-      "需要人工判断": 0
+    "支付与账单": {
+      "功能与改进需求": 0,
+      "应用与数据故障": 0,
+      "支付与账单": 16,
+      "权限与访问": 0,
+      "网络与连接": 0,
+      "账号与认证": 0,
+      "需要人工判断": 2
     },
-    "账号登录": {
-      "功能需求": 0,
-      "支付账单": 0,
-      "系统故障": 0,
-      "账号登录": 4,
-      "需要人工判断": 0
+    "权限与访问": {
+      "功能与改进需求": 0,
+      "应用与数据故障": 0,
+      "支付与账单": 0,
+      "权限与访问": 12,
+      "网络与连接": 0,
+      "账号与认证": 0,
+      "需要人工判断": 1
+    },
+    "网络与连接": {
+      "功能与改进需求": 0,
+      "应用与数据故障": 0,
+      "支付与账单": 0,
+      "权限与访问": 0,
+      "网络与连接": 12,
+      "账号与认证": 0,
+      "需要人工判断": 1
+    },
+    "账号与认证": {
+      "功能与改进需求": 0,
+      "应用与数据故障": 0,
+      "支付与账单": 0,
+      "权限与访问": 0,
+      "网络与连接": 0,
+      "账号与认证": 15,
+      "需要人工判断": 2
     }
   },
   "metrics": [
     {
-      "label": "功能需求",
+      "label": "功能与改进需求",
       "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
+      "recall": 0.8888888888888888,
+      "f1": 0.9411764705882353
     },
     {
-      "label": "支付账单",
+      "label": "应用与数据故障",
       "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
+      "recall": 0.7058823529411765,
+      "f1": 0.8275862068965517
     },
     {
-      "label": "系统故障",
+      "label": "支付与账单",
       "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
+      "recall": 0.8888888888888888,
+      "f1": 0.9411764705882353
     },
     {
-      "label": "账号登录",
+      "label": "权限与访问",
       "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
+      "recall": 0.9230769230769231,
+      "f1": 0.9600000000000001
+    },
+    {
+      "label": "网络与连接",
+      "precision": 1.0,
+      "recall": 0.9230769230769231,
+      "f1": 0.9600000000000001
+    },
+    {
+      "label": "账号与认证",
+      "precision": 0.9375,
+      "recall": 0.8823529411764706,
+      "f1": 0.9090909090909091
     }
   ],
   "details": [
     {
       "text": "密码忘了，在哪里重置？",
-      "label": "账号登录",
+      "label": "账号与认证",
       "split": "test",
-      "prediction": "账号登录",
+      "prediction": "账号与认证",
       "correct": true
     },
     {
       "text": "账号锁定之后一直登录不了",
-      "label": "账号登录",
+      "label": "账号与认证",
       "split": "test",
-      "prediction": "账号登录",
+      "prediction": "账号与认证",
       "correct": true
     },
     {
       "text": "登录验证码一直收不到",
-      "label": "账号登录",
+      "label": "账号与认证",
       "split": "test",
-      "prediction": "账号登录",
+      "prediction": "账号与认证",
       "correct": true
     },
     {
       "text": "更换手机后怎么修改绑定的手机号",
-      "label": "账号登录",
+      "label": "账号与认证",
       "split": "test",
-      "prediction": "账号登录",
+      "prediction": "账号与认证",
       "correct": true
     },
     {
       "text": "这个订单被重复扣款了，请退款",
-      "label": "支付账单",
+      "label": "支付与账单",
       "split": "test",
-      "prediction": "支付账单",
+      "prediction": "支付与账单",
       "correct": true
     },
     {
       "text": "本月发票抬头写错了",
-      "label": "支付账单",
+      "label": "支付与账单",
       "split": "test",
-      "prediction": "支付账单",
+      "prediction": "支付与账单",
       "correct": true
     },
     {
       "text": "取消订阅为什么还会扣费",
-      "label": "支付账单",
+      "label": "支付与账单",
       "split": "test",
-      "prediction": "支付账单",
+      "prediction": "支付与账单",
       "correct": true
     },
     {
       "text": "银行卡付款失败了",
-      "label": "支付账单",
+      "label": "支付与账单",
       "split": "test",
-      "prediction": "支付账单",
+      "prediction": "支付与账单",
       "correct": true
     },
     {
       "text": "页面白屏，刷新也没有用",
-      "label": "系统故障",
+      "label": "应用与数据故障",
       "split": "test",
-      "prediction": "系统故障",
+      "prediction": "应用与数据故障",
       "correct": true
     },
     {
       "text": "保存文件的时候系统报错",
-      "label": "系统故障",
+      "label": "应用与数据故障",
       "split": "test",
-      "prediction": "系统故障",
+      "prediction": "应用与数据故障",
       "correct": true
     },
     {
       "text": "今天接口频繁超时",
-      "label": "系统故障",
+      "label": "应用与数据故障",
       "split": "test",
-      "prediction": "系统故障",
-      "correct": true
+      "prediction": "需要人工判断",
+      "correct": false
     },
     {
       "text": "导出报表导致系统崩溃",
-      "label": "系统故障",
+      "label": "应用与数据故障",
       "split": "test",
-      "prediction": "系统故障",
+      "prediction": "应用与数据故障",
       "correct": true
     },
     {
       "text": "希望增加批量导出功能",
-      "label": "功能需求",
+      "label": "功能与改进需求",
       "split": "test",
-      "prediction": "功能需求",
+      "prediction": "功能与改进需求",
       "correct": true
     },
     {
       "text": "建议增加韩语界面",
-      "label": "功能需求",
+      "label": "功能与改进需求",
       "split": "test",
-      "prediction": "功能需求",
+      "prediction": "功能与改进需求",
       "correct": true
     },
     {
       "text": "能不能支持自定义快捷键",
-      "label": "功能需求",
+      "label": "功能与改进需求",
       "split": "test",
-      "prediction": "功能需求",
+      "prediction": "功能与改进需求",
       "correct": true
     },
     {
       "text": "希望新增按标签筛选的功能",
-      "label": "功能需求",
+      "label": "功能与改进需求",
       "split": "test",
-      "prediction": "功能需求",
+      "prediction": "功能与改进需求",
+      "correct": true
+    },
+    {
+      "text": "出差回来验证手机丢了，现在身份校验这一步过不去",
+      "label": "账号与认证",
+      "split": "test",
+      "prediction": "账号与认证",
+      "correct": true
+    },
+    {
+      "text": "点开入职邀请说已失效，怎样重新激活用户",
+      "label": "账号与认证",
+      "split": "test",
+      "prediction": "账号与认证",
+      "correct": true
+    },
+    {
+      "text": "输入工号后认证中心说没有应用授权",
+      "label": "权限与访问",
+      "split": "test",
+      "prediction": "需要人工判断",
+      "correct": false
+    },
+    {
+      "text": "安全邮箱不再使用，能帮我迁移账号绑定吗",
+      "label": "账号与认证",
+      "split": "test",
+      "prediction": "账号与认证",
+      "correct": true
+    },
+    {
+      "text": "验证邮件晚到了十分钟，里面的链接已经无效",
+      "label": "账号与认证",
+      "split": "test",
+      "prediction": "账号与认证",
+      "correct": true
+    },
+    {
+      "text": "想撤销其他电脑上的登录会话",
+      "label": "账号与认证",
+      "split": "test",
+      "prediction": "账号与认证",
+      "correct": true
+    },
+    {
+      "text": "人事通知要封停前同事的账户",
+      "label": "账号与认证",
+      "split": "test",
+      "prediction": "需要人工判断",
+      "correct": false
+    },
+    {
+      "text": "每次进系统都弹出重新认证，登录会话保不住",
+      "label": "账号与认证",
+      "split": "test",
+      "prediction": "账号与认证",
+      "correct": true
+    },
+    {
+      "text": "财务已汇款两天，购买页面还是待支付状态",
+      "label": "支付与账单",
+      "split": "test",
+      "prediction": "支付与账单",
+      "correct": true
+    },
+    {
+      "text": "这次续约多算了五个席位，请核对收费",
+      "label": "支付与账单",
+      "split": "test",
+      "prediction": "支付与账单",
+      "correct": true
+    },
+    {
+      "text": "电子票据的购方名称有错，需要重新开票",
+      "label": "支付与账单",
+      "split": "test",
+      "prediction": "需要人工判断",
+      "correct": false
+    },
+    {
+      "text": "余额里没有收到承诺的退费差额",
+      "label": "支付与账单",
+      "split": "test",
+      "prediction": "支付与账单",
+      "correct": true
+    },
+    {
+      "text": "测试期间不小心买了两份套餐，能退一份吗",
+      "label": "支付与账单",
+      "split": "test",
+      "prediction": "支付与账单",
+      "correct": true
+    },
+    {
+      "text": "公司报销需要带税额的付款凭证",
+      "label": "支付与账单",
+      "split": "test",
+      "prediction": "支付与账单",
+      "correct": true
+    },
+    {
+      "text": "银行账上有交易记录，可订单却显示付款失败",
+      "label": "支付与账单",
+      "split": "test",
+      "prediction": "支付与账单",
+      "correct": true
+    },
+    {
+      "text": "停用服务后的下个月仍有一笔续费扣款",
+      "label": "支付与账单",
+      "split": "test",
+      "prediction": "支付与账单",
+      "correct": true
+    },
+    {
+      "text": "点开历史附件预览一片空白，下载后文件是正常的",
+      "label": "应用与数据故障",
+      "split": "test",
+      "prediction": "应用与数据故障",
+      "correct": true
+    },
+    {
+      "text": "后台任务跑了一整晚还在转，进度没有变化",
+      "label": "应用与数据故障",
+      "split": "test",
+      "prediction": "需要人工判断",
+      "correct": false
+    },
+    {
+      "text": "表格翻页时报服务器内部错误，首页正常",
+      "label": "应用与数据故障",
+      "split": "test",
+      "prediction": "应用与数据故障",
+      "correct": true
+    },
+    {
+      "text": "原来可以批量导入，今天同样的文件全都失败",
+      "label": "应用与数据故障",
+      "split": "test",
+      "prediction": "应用与数据故障",
+      "correct": true
+    },
+    {
+      "text": "刚输入的备注显示保存成功，刷新却消失了",
+      "label": "应用与数据故障",
+      "split": "test",
+      "prediction": "应用与数据故障",
+      "correct": true
+    },
+    {
+      "text": "所有同事今早 VPN 都提示连接超时",
+      "label": "网络与连接",
+      "split": "test",
+      "prediction": "网络与连接",
+      "correct": true
+    },
+    {
+      "text": "导出的表格被办公软件提示文件格式损坏",
+      "label": "应用与数据故障",
+      "split": "test",
+      "prediction": "应用与数据故障",
+      "correct": true
+    },
+    {
+      "text": "手机浏览器里的提交按钮被其他文字盖住了",
+      "label": "应用与数据故障",
+      "split": "test",
+      "prediction": "账号与认证",
+      "correct": false
+    },
+    {
+      "text": "现在每次都要重设筛选条件，能加一个保存查询的功能吗",
+      "label": "功能与改进需求",
+      "split": "test",
+      "prediction": "功能与改进需求",
+      "correct": true
+    },
+    {
+      "text": "希望员工回邮件时能自动追加到工单记录",
+      "label": "功能与改进需求",
+      "split": "test",
+      "prediction": "功能与改进需求",
+      "correct": true
+    },
+    {
+      "text": "能不能让每个部门有自己的知识可见范围",
+      "label": "功能与改进需求",
+      "split": "test",
+      "prediction": "需要人工判断",
+      "correct": false
+    },
+    {
+      "text": "建议在统计页增加各负责人的平均响应时间",
+      "label": "功能与改进需求",
+      "split": "test",
+      "prediction": "功能与改进需求",
+      "correct": true
+    },
+    {
+      "text": "想要一个工单编号格式设置页面",
+      "label": "功能与改进需求",
+      "split": "test",
+      "prediction": "功能与改进需求",
+      "correct": true
+    },
+    {
+      "text": "目前没有历史版本对照，希望知识编辑器补上",
+      "label": "功能与改进需求",
+      "split": "test",
+      "prediction": "功能与改进需求",
+      "correct": true
+    },
+    {
+      "text": "希望新建工单时可以直接套用常用内容模板",
+      "label": "功能与改进需求",
+      "split": "test",
+      "prediction": "功能与改进需求",
+      "correct": true
+    },
+    {
+      "text": "建议提供每周自动重复创建任务的能力",
+      "label": "功能与改进需求",
+      "split": "test",
+      "prediction": "功能与改进需求",
+      "correct": true
+    },
+    {
+      "text": "输入动态口令后说凭证过期，卡在登录环节",
+      "label": "账号与认证",
+      "split": "test",
+      "prediction": "账号与认证",
+      "correct": true
+    },
+    {
+      "text": "扫码进系统的二维码刚打开就失效",
+      "label": "账号与认证",
+      "split": "test",
+      "prediction": "需要人工判断",
+      "correct": false
+    },
+    {
+      "text": "换了验证器以后账号进不去了",
+      "label": "账号与认证",
+      "split": "test",
+      "prediction": "账号与认证",
+      "correct": true
+    },
+    {
+      "text": "密码找回链接无法完成身份验证",
+      "label": "账号与认证",
+      "split": "test",
+      "prediction": "账号与认证",
+      "correct": true
+    },
+    {
+      "text": "刚注册的账户没有收到激活通知",
+      "label": "账号与认证",
+      "split": "test",
+      "prediction": "账号与认证",
+      "correct": true
+    },
+    {
+      "text": "丢失备用恢复码，双因素认证做不了",
+      "label": "账号与认证",
+      "split": "test",
+      "prediction": "账号与认证",
+      "correct": true
+    },
+    {
+      "text": "我能正常登录，但财务空间不让我进去，请授权",
+      "label": "权限与访问",
+      "split": "test",
+      "prediction": "权限与访问",
+      "correct": true
+    },
+    {
+      "text": "项目里只给了查看角色，需要升级为可编辑",
+      "label": "权限与访问",
+      "split": "test",
+      "prediction": "权限与访问",
+      "correct": true
+    },
+    {
+      "text": "外包合同结束了，请回收共享资料的访问资格",
+      "label": "权限与访问",
+      "split": "test",
+      "prediction": "权限与访问",
+      "correct": true
+    },
+    {
+      "text": "申请加入审计组并查看操作记录",
+      "label": "权限与访问",
+      "split": "test",
+      "prediction": "权限与访问",
+      "correct": true
+    },
+    {
+      "text": "点击删除说权限不够，请管理员开通",
+      "label": "权限与访问",
+      "split": "test",
+      "prediction": "权限与访问",
+      "correct": true
+    },
+    {
+      "text": "部门调整后需要变更可访问的项目范围",
+      "label": "权限与访问",
+      "split": "test",
+      "prediction": "权限与访问",
+      "correct": true
+    },
+    {
+      "text": "请让新成员获得下载合同附件的权限",
+      "label": "权限与访问",
+      "split": "test",
+      "prediction": "权限与访问",
+      "correct": true
+    },
+    {
+      "text": "临时访问资格到期了，需要续期",
+      "label": "权限与访问",
+      "split": "test",
+      "prediction": "权限与访问",
+      "correct": true
+    },
+    {
+      "text": "我不是这个文档的所有者，怎样申请编辑授权",
+      "label": "权限与访问",
+      "split": "test",
+      "prediction": "权限与访问",
+      "correct": true
+    },
+    {
+      "text": "管理员身份要转给接任的负责人",
+      "label": "权限与访问",
+      "split": "test",
+      "prediction": "权限与访问",
+      "correct": true
+    },
+    {
+      "text": "想把供应商从团队成员名单里移除",
+      "label": "权限与访问",
+      "split": "test",
+      "prediction": "权限与访问",
+      "correct": true
+    },
+    {
+      "text": "登录没有问题，只有审批操作提示未授权",
+      "label": "权限与访问",
+      "split": "test",
+      "prediction": "权限与访问",
+      "correct": true
+    },
+    {
+      "text": "整间办公室的无线都断了，网页也打不开",
+      "label": "网络与连接",
+      "split": "test",
+      "prediction": "网络与连接",
+      "correct": true
+    },
+    {
+      "text": "远程隧道刚建立就掉线，但家庭宽带正常",
+      "label": "网络与连接",
+      "split": "test",
+      "prediction": "网络与连接",
+      "correct": true
+    },
+    {
+      "text": "电脑拿不到局域网地址，网络显示未识别",
+      "label": "网络与连接",
+      "split": "test",
+      "prediction": "网络与连接",
+      "correct": true
+    },
+    {
+      "text": "查询内部域名时提示 DNS 无响应",
+      "label": "网络与连接",
+      "split": "test",
+      "prediction": "网络与连接",
+      "correct": true
+    },
+    {
+      "text": "代理服务器的端口始终连接不上",
+      "label": "网络与连接",
+      "split": "test",
+      "prediction": "网络与连接",
+      "correct": true
+    },
+    {
+      "text": "VPN 提示无法与网关完成握手",
+      "label": "网络与连接",
+      "split": "test",
+      "prediction": "网络与连接",
+      "correct": true
+    },
+    {
+      "text": "有线可以上网，换成无线就不行",
+      "label": "网络与连接",
+      "split": "test",
+      "prediction": "网络与连接",
+      "correct": true
+    },
+    {
+      "text": "连公司网络开视频会一直丢包",
+      "label": "网络与连接",
+      "split": "test",
+      "prediction": "网络与连接",
+      "correct": true
+    },
+    {
+      "text": "网关 ping 不通，同一网络的同事也这样",
+      "label": "网络与连接",
+      "split": "test",
+      "prediction": "网络与连接",
+      "correct": true
+    },
+    {
+      "text": "换手机热点后远程桌面断开了",
+      "label": "网络与连接",
+      "split": "test",
+      "prediction": "网络与连接",
+      "correct": true
+    },
+    {
+      "text": "电脑提示地址冲突，内网访问不了",
+      "label": "网络与连接",
+      "split": "test",
+      "prediction": "网络与连接",
+      "correct": true
+    },
+    {
+      "text": "企业代理总是超时导致网页无法打开",
+      "label": "网络与连接",
+      "split": "test",
+      "prediction": "需要人工判断",
+      "correct": false
+    },
+    {
+      "text": "打开设置窗口后软件直接退出了",
+      "label": "应用与数据故障",
+      "split": "test",
+      "prediction": "应用与数据故障",
+      "correct": true
+    },
+    {
+      "text": "昨天录入的联系方式今天显示为空",
+      "label": "应用与数据故障",
+      "split": "test",
+      "prediction": "应用与数据故障",
+      "correct": true
+    },
+    {
+      "text": "点击排序后日期顺序完全没有变化",
+      "label": "应用与数据故障",
+      "split": "test",
+      "prediction": "应用与数据故障",
+      "correct": true
+    },
+    {
+      "text": "PDF 预览按钮点下去提示服务器错误",
+      "label": "应用与数据故障",
+      "split": "test",
+      "prediction": "应用与数据故障",
+      "correct": true
+    },
+    {
+      "text": "导入后记录被重复创建了三次",
+      "label": "应用与数据故障",
+      "split": "test",
+      "prediction": "需要人工判断",
+      "correct": false
+    },
+    {
+      "text": "看板的统计数字一天没有刷新",
+      "label": "应用与数据故障",
+      "split": "test",
+      "prediction": "需要人工判断",
+      "correct": false
+    },
+    {
+      "text": "合同有八折优惠，结算单却按原价收费",
+      "label": "支付与账单",
+      "split": "test",
+      "prediction": "支付与账单",
+      "correct": true
+    },
+    {
+      "text": "对公打款多了一百元，请退回差额",
+      "label": "支付与账单",
+      "split": "test",
+      "prediction": "支付与账单",
+      "correct": true
+    },
+    {
+      "text": "退款显示成功但收款账户没有入账",
+      "label": "支付与账单",
+      "split": "test",
+      "prediction": "支付与账单",
+      "correct": true
+    },
+    {
+      "text": "报销需要补一张含公司地址的发票",
+      "label": "支付与账单",
+      "split": "test",
+      "prediction": "支付与账单",
+      "correct": true
+    },
+    {
+      "text": "年度套餐购买后又收到每月扣费通知",
+      "label": "支付与账单",
+      "split": "test",
+      "prediction": "支付与账单",
+      "correct": true
+    },
+    {
+      "text": "账期已结清为什么还显示欠款",
+      "label": "支付与账单",
+      "split": "test",
+      "prediction": "需要人工判断",
+      "correct": false
+    },
+    {
+      "text": "建议给知识文章增加到期自动提醒的能力",
+      "label": "功能与改进需求",
+      "split": "test",
+      "prediction": "功能与改进需求",
+      "correct": true
+    },
+    {
+      "text": "想按处理人查看工作负荷，目前没有这个报表",
+      "label": "功能与改进需求",
+      "split": "test",
+      "prediction": "需要人工判断",
+      "correct": false
+    },
+    {
+      "text": "希望在搜索命中词上显示醒目标记",
+      "label": "功能与改进需求",
+      "split": "test",
+      "prediction": "功能与改进需求",
+      "correct": true
+    },
+    {
+      "text": "能加一个收藏常用操作手册的入口吗",
+      "label": "功能与改进需求",
+      "split": "test",
+      "prediction": "功能与改进需求",
+      "correct": true
+    },
+    {
+      "text": "建议以后支持按节假日设置自动回复",
+      "label": "功能与改进需求",
+      "split": "test",
+      "prediction": "功能与改进需求",
+      "correct": true
+    },
+    {
+      "text": "现在只有 Excel 导出，想新增 PDF 格式",
+      "label": "功能与改进需求",
+      "split": "test",
+      "prediction": "功能与改进需求",
       "correct": true
     }
   ]

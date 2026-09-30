@@ -152,8 +152,8 @@ async function dashboard(epoch) {
   const active = tickets.filter((t) => ['待处理', '处理中'].includes(t.status)).slice(0, 5);
   $('#main').innerHTML =
     head(
-      '把每个问题，处理妥当。',
-      '集中处理工单，用本地知识找到有依据的答案。',
+      '今天，也把问题处理妥当。',
+      `还有 ${stats.statuses['待处理']} 条工单等待首次响应，用本地知识找到有依据的答案。`,
       btn(icon('upload') + ' 导入知识', 'new-document') +
         btn(icon('plus') + ' 新建工单', 'new-ticket', 'primary'),
       'WORKSPACE / 工作台',
@@ -177,8 +177,8 @@ async function dashboard(epoch) {
           `<div class="stat"><div class="stat-label">${label}${icon(i)}</div><div class="stat-number">${value.toString().padStart(2, '0')}</div><div class="stat-detail">${detail}</div></div>`,
       )
       .join('')}</div>
- <section class="panel"><div class="panel-head"><div><h2>需要关注的工单 <span class="count-chip">${stats.statuses['待处理'] + stats.statuses['处理中']}</span></h2><p>先解决问题，再把经验留下来</p></div><a class="subtle-link" href="#tickets">查看全部 →</a></div>${ticketTable(active)}</section>
- <div class="two-col"><section class="panel"><div class="panel-head"><h2>知识库</h2><a href="#knowledge" class="subtle-link">管理文档 →</a></div><div class="panel-body">${
+ <div class="dashboard-layout"><section class="panel"><div class="panel-head"><div><h2>需要关注的工单 <span class="count-chip">${stats.statuses['待处理'] + stats.statuses['处理中']}</span></h2><p>先解决问题，再把经验留下来</p></div><a class="subtle-link" href="#tickets">查看全部 →</a></div>${ticketTable(active)}</section>
+ <div class="two-col"><section class="panel assistant-intro"><div class="ai-orb">${icon('spark')}</div><h2>让知识，帮你多走一步。</h2><p>检索本地资料，整理带原文引用的处理建议。每一份草稿，都由你最终确认。</p><a class="subtle-link" href="#knowledge">检索知识库 →</a></section><section class="panel"><div class="panel-head"><h2>知识库</h2><a href="#knowledge" class="subtle-link">管理文档 →</a></div><div class="panel-body">${
    docs.length
      ? docs
          .slice(0, 4)
@@ -194,19 +194,27 @@ async function dashboard(epoch) {
          'book',
        )
  }</div></section>
- <section class="panel"><div class="panel-head"><h2>问题分布</h2><span class="tiny muted">全部 ${stats.total} 条</span></div><div class="panel-body">${stats.categories.length ? stats.categories.map((c) => `<div class="bar-row"><div class="bar-caption"><span>${esc(c.name)}</span><span>${c.count}</span></div><div class="bar"><span style="width:${Math.max(3, (c.count / Math.max(1, stats.total)) * 100)}%"></span></div></div>`).join('') : '<p class="settings-note">创建工单后，这里会显示问题类别分布。</p>'}<div class="insight">${icon('shield')}<span>回复有来源，处理有记录。AI 草稿不会自动发送，也不会自动关闭工单。</span></div></div></section></div>`;
+ <section class="panel"><div class="panel-head"><h2>问题分布</h2><span class="tiny muted">全部 ${stats.total} 条</span></div><div class="panel-body">${stats.categories.length ? stats.categories.map((c) => `<div class="bar-row"><div class="bar-caption"><span>${esc(c.name)}</span><span>${c.count}</span></div><div class="bar"><span style="width:${Math.max(3, (c.count / Math.max(1, stats.total)) * 100)}%"></span></div></div>`).join('') : '<p class="settings-note">创建工单后，这里会显示问题类别分布。</p>'}<div class="insight">${icon('shield')}<span>回复有来源，处理有记录。AI 草稿不会自动发送，也不会自动关闭工单。</span></div></div></section></div></div>`;
 }
 async function ticketsView(epoch) {
   const params = new URLSearchParams(location.hash.split('?')[1] || '');
   const rows = await api('/tickets?' + params);
   if (epoch !== routeEpoch) return;
+  const filtered = ['q', 'status', 'category'].some((key) => params.get(key));
+  const exportUrl = '/api/tickets/export?' + params.toString();
+  const resetLink = '<a class="btn ghost" href="#tickets">清除筛选</a>';
+  const results =
+    !rows.length && filtered
+      ? empty('没有匹配的工单', '试试其他关键词，或清除筛选条件。', resetLink)
+      : ticketTable(rows);
   $('#main').innerHTML =
     head(
       '工单',
       '跟踪每个问题，从提交到解决。',
-      btn(icon('plus') + ' 新建工单', 'new-ticket', 'primary'),
+      `<a class="btn" href="${esc(exportUrl)}" download="desk-tickets.csv">${icon('download')} 导出筛选结果</a>` +
+        btn(icon('plus') + ' 新建工单', 'new-ticket', 'primary'),
     ) +
-    `<section class="panel"><form id="ticket-filter" class="toolbar"><div class="search-field">${icon('search')}<input aria-label="搜索工单" name="q" value="${esc(params.get('q') || '')}" placeholder="搜索标题、描述或工单编号"></div><select name="status" aria-label="按状态筛选">${options(config.statuses, params.get('status'), '全部状态')}</select><select name="category" aria-label="按类别筛选">${options(config.categories, params.get('category'), '全部类别')}</select><button class="btn" type="submit">筛选</button></form>${ticketTable(rows)}<div class="page-count">显示 ${rows.length} 条工单（最多500条，请使用筛选缩小范围）</div></section>`;
+    `<section class="panel"><form id="ticket-filter" class="toolbar"><div class="search-field">${icon('search')}<input aria-label="搜索工单" name="q" value="${esc(params.get('q') || '')}" placeholder="搜索标题、描述或工单编号"></div><select name="status" aria-label="按状态筛选">${options(config.statuses, params.get('status'), '全部状态')}</select><select name="category" aria-label="按类别筛选">${options(config.categories, params.get('category'), '全部类别')}</select><button class="btn" type="submit">筛选</button>${filtered ? resetLink : ''}</form>${results}<div class="page-count">显示 ${rows.length} 条工单（页面最多显示500条；导出包含全部已应用筛选结果）</div><p class="settings-note panel-body">导出以已应用的筛选条件为准。CSV 包含问题描述、回复和解决方案；公式型文本会加单引号作为文本导出。</p></section>`;
 }
 function newTicket(edit = false) {
   const t = edit ? currentTicket : {};
